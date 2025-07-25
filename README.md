@@ -31,6 +31,6 @@ O projeto tem como objetivo apresentar minhas habilidades em **HTML5, CSS3 e Jav
 
 ## 💬 Contato
 
-- [LinkedIn](https://www.linkedin.com/in/rs2chel)
+- [LinkedIn](https://www.linkedin.com/in/racheldantas/)
 - [Instagram](https://www.instagram.com/rs2chel/)
 - [GitHub](https://github.com/rs2chel)
