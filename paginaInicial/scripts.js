@@ -24,37 +24,3 @@ buttonTrilho.addEventListener("click", function () {
     }
 
 });
-
-const container = document.querySelector('.container-cards');
-const cards = document.querySelectorAll('.card-projeto');
-const bolinhas = document.querySelectorAll('.bolinha');
-let index = 0;
-
-function atualizarCarrossel() {
-    container.style.transform = `translateX(-${index * 30}%)`;
-    bolinhas.forEach((b, i) => {
-        b.classList.toggle('ativa', i === index);
-    });
-}
-
-document.querySelector('.seta.direita').addEventListener('click', () => {
-    if (index < cards.length - 1) {
-        index++;
-        atualizarCarrossel();
-    }
-});
-
-document.querySelector('.seta.esquerda').addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-        atualizarCarrossel();
-    }
-});
-
-bolinhas.forEach((b, i) => {
-    b.addEventListener('click', () => {
-        index = i;
-        atualizarCarrossel();
-    });
-});
-

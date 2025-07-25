@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
@@ -11,9 +12,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    overflow-x: hidden;
-}
+
 
 Header {
     height: 3em;
@@ -21,6 +20,7 @@ Header {
     align-items: center;
     display: flex;
     justify-content: space-around;
+
 }
 
 a {
@@ -135,7 +135,7 @@ a {
     display: flex;
     justify-content: space-between;
     background-color: rgb(50, 82, 109);
-    height: 400px;
+    height: 30em;
 
 }
 
@@ -166,7 +166,7 @@ h1 {
 
 h2 {
     margin-top: 0.2em;
-    font-size: 1.8em;
+    font-size: 10px;
 
 }
 
@@ -199,7 +199,7 @@ h3 {
 .descricaoSobreMim {
     text-align: justify;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 1.2em;
     margin: 20px 10px 10px 30px;
 
 }
@@ -220,7 +220,7 @@ h3 {
     padding: 10px;
     display: flex;
     align-items: center;
-    margin-top: 3em;
+    margin-top: 0em;
     box-shadow: 2px 2px 2px 2px #616160f9;
 }
 
@@ -235,6 +235,7 @@ Header {
 }
 
 .tecnologias {
+    margin-top: 3rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -242,17 +243,11 @@ Header {
 
 
 .tituloTec {
-    font-size: 50px;
+    font-size: 5rem;
     position: absolute;
-    top: 9em;
-    left: 18em;
-    right: 18em;
-    ;
-
-    height: 40px;
-    width: 300px;
+    top: 6.8em;
+    margin: 1rem 0px 0px 0px;
     align-items: center;
-
     background-color: transparent;
 }
 
@@ -268,7 +263,7 @@ Header {
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 8px 10px #888888;
-    height: 30em;
+    height: 40em;
     width: 100%;
 
 }
@@ -352,37 +347,42 @@ Header {
 }
 
 .box-cards-projetos {
-    height: 700px;
+    height: 70rem;
     width: 100%;
-    background-color: rgb(255, 254, 255);
+    background-color: rgb(222, 222, 222);
     margin: 0px;
     padding: 10px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: rebeccapurple;
-}
 
 .meusProjetos {
+    align-items: center;
+    background-color: rgba(254, 242, 242, 0.933);
+    height: 50rem;
     display: flex;
+    border-radius: 2rem;
     justify-content: space-around;
-    margin: 10px 10px 10px 10px;
+
     align-items: center;
 
+}
+
+.tituloProjetos {
+    font-size: 6rem;
 }
 
 .card-projeto {
     background-color: rgba(208, 242, 255, 0.845);
     color: aliceblue;
     margin: 0px 10em 0px 10em;
-    width: 30%;
-    height: 60%;
+    width: 50em;
+    height: 40rem;
     padding: 1rem;
     border-radius: 2rem;
     box-shadow: 10px 8px 9px 10px #e1dada;
@@ -391,6 +391,7 @@ Header {
     align-items: center;
     flex-direction: column;
     transition: 0.6s;
+    color: #090909;
 }
 
 
@@ -404,14 +405,15 @@ Header {
 
 
 .card-projeto:hover {
-    background-color: rgba(185, 215, 226, 0.845);
+    background-color: rgba(109, 144, 156, 0.845);
     transform: scale(1.1)
 }
 
 .tecnologias-usadas {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin: 10px;
+
 }
 
 .tech-badge {
@@ -419,30 +421,25 @@ Header {
     padding: 4px 16px;
     width: fit-content;
     border-radius: 50px;
-    color: rgb(182, 178, 250);
-    background-color: rgb(61, 59, 59);
+    color: rgb(240, 240, 240);
+    background-color: rgb(72, 106, 99);
 }
 
 .tech-badge:hover {
-    background-color: #6c6c6c;
+    background-color: #9c926b;
+    color: #090909;
 
 }
 
 .titulo-card {
-    font-size: 23px;
-    color: #1e434e;
+
+    font-size: 2rem;
+    color: #665203af;
 
 }
 
-.card-projeto {
-    color: #090909;
-}
 
-/* .carrossel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-} */
+
 
 .container-cards {
     display: flex;
@@ -473,29 +470,11 @@ Header {
 }
 
 
-.bolinhas {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.bolinha {
-    width: 10px;
-    height: 10px;
-    background: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.bolinha.ativa {
-    background: #333;
-}
 
 .redes-socias {
-    background-color: rgb(174, 227, 241);
+    background-color: rgb(62, 66, 67);
     width: 100%;
-    height: 200px;
+    height: 5rem;
     display: flex;
     display: flex;
     justify-content: center;
@@ -503,10 +482,80 @@ Header {
 }
 
 footer {
-    background-color: green;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
     width: 100%;
-    height: 200px;
+    height: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container-cards {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease-in-out;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+
+
+/* Setas */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    z-index: 1;
+}
+
+.seta.esquerda {
+    left: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.seta.direita {
+    right: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.seta.esquerda:hover,
+.seta.direita:hover {
+    color: #5ec4e3;
+    background-color: rgb(6, 6, 96);
+}
+
+/* 
+Bolinhas .bolinhas {
+    text-align: center;
+    margin-top: 1rem;
+} */
+
+/* .bolinha {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bolinha.ativa {
+    background: #333;
+} */
