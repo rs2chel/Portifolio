@@ -26,18 +26,60 @@ Header {
 a {
     color: #090909;
     text-decoration: none;
-    margin-right: 70px;
+    margin-right: 1rem;
 }
 
-.perfil {
-    border-radius: 10px;
+/* .perfil {
+    border-radius: 1rem;
     padding: 0.2rem 0rem 0.2rem 1rem;
     align-items: center;
 }
 
 .perfil:hover {
-    background-color: #e1e1e1;
-    box-shadow: 1px 1px 1px 1px rgb(85, 84, 84);
+    text-decoration:underline;
+    
+    color: #1d7e9e;
+    
+   
+} */
+.perfil {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+.nomePerfil {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nomePerfil::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color:  #f5e58c;
+  transition: width 0.3s ease;
+}
+
+.nomePerfil:hover {
+  color: #dec430;
+}
+
+.nomePerfil:hover::after {
+  width: 100%;
+}
+
+
+.perfil:hover::after {
+  width: calc(100% - 1rem); /* desconta o padding esquerdo */
 }
 
 .nav-bar {
@@ -48,6 +90,39 @@ a {
     height: 100%;
 
 }
+.nav-header {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  height: 30px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0; /* gruda no texto */
+  width: 0%;
+  height: 2px;
+  background-color: #f5e58c; /* cor do sublinhado */
+  transition: width 0.5s ease;
+}
+
+.nav-header:hover {
+ 
+  color:  #dec430;
+ 
+}
+
+.nav-header:hover::after {
+  width: 100%;
+}
+
+
 
 .box {
     width: 200px;
@@ -178,23 +253,7 @@ h3 {
 
 }
 
-.nav-header {
-    box-sizing: border-box;
-    padding: 5px 5px 5px 5px;
-    text-align: center;
-    height: 30px;
-}
 
-.nav-header:hover {
-    box-sizing: border-box;
-    padding: 5px 5px 5px 5px;
-    box-shadow: 2px 2px 3px 3px rgb(19, 11, 11);
-    text-align: center;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #6c6c6c;
-    color: #eeeeee;
-}
 
 .descricaoSobreMim {
     text-align: justify;
