@@ -280,7 +280,7 @@ h3 {
 
 }
 
-Header {
+header {
     display: flex;
 }
 
@@ -301,9 +301,8 @@ Header {
 }
 
 .img-logo {
-    position: absolute;
-    left: 1px;
-    width: 4rem;
+
+    width: 7rem;
 }
 
 .cards {
@@ -317,7 +316,7 @@ Header {
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 8px 10px #888888;
-    height: 40em;
+    height: auto;
     width: 100%;
 
 }
@@ -327,7 +326,7 @@ Header {
     border-radius: 30px;
     background-color: rgb(255, 253, 253);
     margin: 10%;
-    height: 90%;
+    height: 35rem;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -374,15 +373,19 @@ Header {
 }
 
 .card-front {
+    display: flex;
+    flex-direction: column-reverse;
     background-color: rgb(255, 253, 253);
     color: black;
 }
 
 .card-back {
+
     background-color: rgba(227, 218, 218, 0.528);
     transform: rotateY(180deg);
-    font-size: 1.6em;
-    text-align: center;
+    font-size: 2.5rem;
+    align-items: center;
+    text-align: justify;
     font-family: Garamond (serif);
     color: #0b0b0b;
     padding: 20px;
@@ -398,115 +401,167 @@ Header {
     font-size: 0.9em;
 }
 
+/* seção sem info ainda  */
 
-.text-saibaMais {
-    height: 400px;
-    background-color: #aaa;
-}
 
+
+/* seção de projetos  */
+
+/* 
+box-cards-projetos
+    tituloProjetos
+    container-cards
+        carousel-container
+            meusProjetos
+            card-projeto
+                tecnologias-usadas
+                    tech-badge
+                titulo-card
+                descricao-card
+                botoes-card
+                    btn-card
+*/
+
+/* &#8593; SETA PRA CIMA */
 .box-cards-projetos {
-    height: 70rem;
-    width: 100%;
-    background-color: rgb(222, 222, 222);
-    margin: 0px;
-    padding: 10px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-
-
-}
-
-
-.meusProjetos {
-    align-items: center;
-    background-color: rgba(254, 242, 242, 0.933);
-    height: 50rem;
-    display: flex;
-    border-radius: 2rem;
-    justify-content: space-around;
-
-    align-items: center;
-
+    height: auto;
+    background-color: #000;
+    color: #fff;
 }
 
 .tituloProjetos {
-    text-align: center;
     font-size: 4rem;
 }
 
-.card-projeto {
-    background-color: rgba(208, 242, 255, 0.845);
-    color: aliceblue;
-    margin: 0px 10em 0px 10em;
-    width: 50em;
-    height: 40rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    box-shadow: 10px 8px 9px 10px #e1dada;
-    perspective: 1000px;
+.container-cards {
+    /* Area do carrossel */
+    position: relative;
+    height: auto;
+    background-color: #a25656;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carousel-container {
+    /* Area de visualizacao */
+     height: 30em;
+    width: 90%;
+    background-color: #5064a4;
+    padding: 10px;
+     display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.meusProjetos {
     display: flex;
     align-items: center;
+    justify-content: start;
+}
+
+.card-projeto {
+    border-radius: 10px;
+    margin:1rem;
+    padding: 10px;
+   height: 25rem;
+    width: 30rem;
+    background-color: rgba(24, 4, 62, 0.845);
+    display: flex;
     flex-direction: column;
-    transition: 0.6s;
-    color: #090909;
+    align-items: center;
+    
 }
-
-
-.card-projeto img {
-    width: 330px;
-    height: 300px;
-    cursor: pointer;
-    border-radius: 2rem;
-}
-
-
 
 .card-projeto:hover {
+    transform: scale(1.05);
     background-color: rgba(86, 198, 235, 0.845);
-    transform: scale(1.1);
-
+    box-shadow: 1px 4px 7px 3px #5ce4e8;
 }
-
-.tecnologias-usadas {
+.tecnologias-usadas{
     display: flex;
-    justify-content: space-between;
-    margin: 10px;
-
+  
+    
 }
 
-.tech-badge {
+
+.tech-badge{
     cursor: pointer;
-    padding: 4px 16px;
-    width: fit-content;
-    border-radius: 50px;
-    color: rgb(240, 240, 240);
-    background-color: rgb(72, 106, 99);
-}
-
-.tech-badge:hover {
-    background-color: #9c926b;
-    color: #090909;
-}
-
-.titulo-card {
-    font-size: 2rem;
-    color: #9c8218af;
-}
-
-
-
-
-.container-cards {
+    color: #ffffff;
     display: flex;
-    transition: transform 0.5s ease;
+    align-items: center;
+    font-size: 50%;
+     background-color: #6573b1;
+     width: auto;
+     padding: 10px;
+     height: 10px;
+     border-radius: 10px;
+     margin: 10px;
+}
+.tech-badge:hover{
+   
+    background-color: #5474ff;
+
+}
+.titulo-card{
+    color: #FFFF;
+    font-size: 0.9rem;
+  
+}
+.descricao-card{
+    margin: 5%;
+text-align: center;
+    font-size: 1rem
+}
+.botoes-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.btn-card {
+    margin: 15px;
+    height: 20px;
+    width: 10px;
+    padding: 0.5rem 1rem;
+    background-color: #1c2d79;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
+.btn-card:hover {
+    background-color: #a2e9fa;
+}
 
+/* Bolinhas */
+.bolinhas {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
+.bolinha {
+    width: 12px;
+    height: 12px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.bolinha.ativa {
+    background-color: #fff;
+}
 
 .seta {
     position: absolute;
@@ -526,8 +581,6 @@ Header {
 .seta.direita {
     right: 10px;
 }
-
-
 
 .redes-socias {
     background-color: rgb(62, 66, 67);
@@ -549,29 +602,12 @@ footer {
     align-items: center;
 }
 
-
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.container-cards {
-    display: flex;
-    gap: 1rem;
-    transition: transform 0.5s ease-in-out;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
-
-
 /* Setas */
 .seta {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(221, 240, 147, 0.6);
     color: #fff;
     border: none;
     font-size: 2rem;
@@ -595,7 +631,7 @@ footer {
 .seta.esquerda:hover,
 .seta.direita:hover {
     color: #5ec4e3;
-    background-color: rgb(6, 6, 96);
+    background-color: rgb(161, 244, 131);
 }
 
 
@@ -655,6 +691,11 @@ footer {
 
 
 @media (max-width: 1300px) {
+    .img-logo {
+        position: absolute;
+        left: 1px;
+        width: 5rem;
+    }
 
     .cards {
         border-radius: 0px;
@@ -703,7 +744,7 @@ footer {
     .card-back {
         color: #000;
         text-transform: uppercase;
-        font-size: 2rem;
+        font-size: 1.6rem;
         display: none;
         background-color: rgb(210, 209, 212);
         position: relative;
@@ -712,6 +753,7 @@ footer {
         align-items: center;
         text-align: center;
         height: auto;
+        min-height: 300px;
 
     }
 

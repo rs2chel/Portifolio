@@ -24,21 +24,58 @@ buttonTrilho.addEventListener("click", function () {
   }
 
 });
-// const cards = document.querySelectorAll('.card-front');
 
-// cards.forEach(card => {
-//   card.addEventListener('click', () => {
-//     const btn = document.createElement("button")
-//     btn.innerText = botao.innerText.replace(estaAberto ? '⬆' : '⬇', estaAberto ? '⬇' : '⬆');
-//     btn.appendChild(textoBotao)
-//     //     const conteudo = botao.nextElementSiblin
-//     // g;
-//     // const estaAberto = conteudo.style.display === 'block';
+  document.addEventListener('DOMContentLoaded', () => {
+    const carrossel = document.getElementById('carrossel');
+    const cards = carrossel.querySelectorAll('.card-projeto');
+    const btnEsquerda = document.querySelector('.seta.esquerda');
+    const btnDireita = document.querySelector('.seta.direita');
+    const bolinhasContainer = document.querySelector('.bolinhas');
 
-//     // conteudo.style.display = estaAberto ? 'none' : 'block';
-//     // botao.innerText = botao.innerText.replace(estaAberto ? '⬆' : '⬇', estaAberto ? '⬇' : '⬆');
-//   });
-// });
+    const cardsPorPagina = 3;
+    const totalPaginas = Math.ceil(cards.length / cardsPorPagina);
+    let paginaAtual = 0;
+
+    // Cria as bolinhas
+    for (let i = 0; i < totalPaginas; i++) {
+      const bolinha = document.createElement('span');
+      bolinha.classList.add('bolinha');
+      if (i === 0) bolinha.classList.add('ativa');
+      bolinha.addEventListener('click', () => irParaPagina(i));
+      bolinhasContainer.appendChild(bolinha);
+    }
+
+    function atualizarBolinhas() {
+      const todas = document.querySelectorAll('.bolinha');
+      todas.forEach((b, i) => {
+        b.classList.toggle('ativa', i === paginaAtual);
+      });
+    }
+
+    function irParaPagina(pagina) {
+      paginaAtual = pagina;
+      const scrollValor = cards[0].offsetWidth * cardsPorPagina * pagina;
+      carrossel.scrollTo({
+        left: scrollValor,
+        behavior: 'smooth'
+      });
+      atualizarBolinhas();
+    }
+
+    btnEsquerda.addEventListener('click', () => {
+      if (paginaAtual > 0) {
+        irParaPagina(paginaAtual - 1);
+      }
+    });
+
+    btnDireita.addEventListener('click', () => {
+      if (paginaAtual < totalPaginas - 1) {
+        irParaPagina(paginaAtual + 1);
+      }
+    });
+  });
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   function atualizarCards() {
