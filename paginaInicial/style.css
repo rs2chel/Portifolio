@@ -2,22 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     max-width: 100%;
+    max-width: 100%;
 
 }
 
 html {
     font-size: 16px;
     font-family: Courier New, monospace;
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth;
 }
-body{
+
+body {
     overflow-x: hidden;
 }
 
 
 header {
-     text-transform: uppercase;
+    text-transform: uppercase;
     width: 100%;
     height: 3em;
     background-color: rgb(255, 255, 255);
@@ -34,44 +35,45 @@ a {
 }
 
 .perfil {
-  display: flex;
-  align-items: center;
-  border-radius: 1rem;
-  padding: 0.2rem 0 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 0.2rem 0 0.2rem 1rem;
 }
 
 .nomePerfil {
-    
-  position: relative;
-  display: inline-block;
-  margin-left: 0.5rem;
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s ease;
+
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .nomePerfil::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color:  #f5e58c;
-  transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f5e58c;
+    transition: width 0.3s ease;
 }
 
 .nomePerfil:hover {
-  color: #dec430;
+    color: #dec430;
 }
 
 .nomePerfil:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 
 .perfil:hover::after {
-  width: calc(100% - 1rem); /* desconta o padding esquerdo */
+    width: calc(100% - 1rem);
+    /* desconta o padding esquerdo */
 }
 
 .nav-bar {
@@ -82,41 +84,43 @@ a {
     height: 100%;
 
 }
+
 .nav-header {
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-  text-align: center;
-  height: 30px;
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    height: 30px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-header::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0; /* gruda no texto */
-  width: 0%;
-  height: 2px;
-  background-color: #f5e58c; /* cor do sublinhado */
-  transition: width 0.5s ease;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* gruda no texto */
+    width: 0%;
+    height: 2px;
+    background-color: #f5e58c;
+    /* cor do sublinhado */
+    transition: width 0.5s ease;
 }
 
 .nav-header:hover {
- 
-  color:  #dec430;
- 
+
+    color: #dec430;
+
 }
 
 .nav-header:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .trilho {
     width: 2.6em;
-
     height: auto;
     background-color: aliceblue;
     border-radius: 10px;
@@ -192,7 +196,8 @@ a {
 .apresentacao {
     display: flex;
     justify-content: space-between;
-  background-color: rgb(234, 232, 232);
+
+    background-color: rgb(234, 232, 232);
 
 }
 
@@ -208,25 +213,25 @@ a {
     height: 100%;
     width: 65%;
     margin-right: 2%;
-   
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
+    padding: 3%;
 }
 
 h1 {
     font-size: 2em;
     margin: 0.5em;
     margin-top: 1em;
-     text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 h2 {
-    color:#d3b50c;
+    color: #d3b50c;
     margin-top: 0.2em;
     font-size: 1.8em;
-     text-transform: uppercase;
+    text-transform: uppercase;
 
 }
 
@@ -235,14 +240,13 @@ h3 {
     margin-top: 1em;
     color: #090909;
     font-size: 1.5em;
-     text-transform: uppercase;
+    text-transform: uppercase;
 
 }
 
 
 
 .descricaoSobreMim {
-    
     text-align: justify;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2em;
@@ -291,18 +295,20 @@ Header {
 .tituloTec {
     font-size: 4rem;
     position: absolute;
-    margin: -1rem 0px  0px 0px;
+    margin: -1rem 0px 0px 0px;
     align-items: center;
     background-color: transparent;
 }
-.img-logo{
-    width:10rem;
-   width:10rem;
+
+.img-logo {
+    position: absolute;
+    left: 1px;
+    width: 4rem;
 }
+
 .cards {
-    font-size: 2em;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
     gap: 1rem;
     background-color: rgba(118, 118, 118, 0.574);
     border-radius: 1em;
@@ -320,7 +326,7 @@ Header {
     padding: 15px;
     border-radius: 30px;
     background-color: rgb(255, 253, 253);
-    margin:10%;
+    margin: 10%;
     height: 90%;
     width: 80%;
     display: flex;
@@ -347,6 +353,7 @@ Header {
 
 .card-front,
 .card-back {
+
     position: absolute;
     width: 100%;
     height: 100%;
@@ -358,11 +365,12 @@ Header {
     justify-content: center;
     padding: 15px;
     box-sizing: border-box;
+
 }
 
 .card:hover {
 
-     box-shadow: 1px 2px 8px 4px #85c2f49d;
+    box-shadow: 1px 2px 8px 4px #85c2f49d;
 }
 
 .card-front {
@@ -373,7 +381,7 @@ Header {
 .card-back {
     background-color: rgba(227, 218, 218, 0.528);
     transform: rotateY(180deg);
-    font-size: 0.9em;
+    font-size: 1.6em;
     text-align: justify;
     font-family: Garamond (serif);
     color: #0b0b0b;
@@ -406,7 +414,7 @@ Header {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-        
+
 
 }
 
@@ -458,7 +466,7 @@ Header {
 .card-projeto:hover {
     background-color: rgba(86, 198, 235, 0.845);
     transform: scale(1.1);
- 
+
 }
 
 .tecnologias-usadas {
@@ -483,10 +491,8 @@ Header {
 }
 
 .titulo-card {
-
     font-size: 2rem;
     color: #9c8218af;
-
 }
 
 
@@ -591,94 +597,131 @@ footer {
     background-color: rgb(6, 6, 96);
 }
 
-/* 
-Bolinhas .bolinhas {
-    text-align: center;
-    margin-top: 1rem;
-} */
 
-/* .bolinha {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 4px;
-    background: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.bolinha.ativa {
-    background: #333;
-} */
 
 
 @media (max-width: 768px) {
-    .polaroid{
-      background-color: transparent;
+    .polaroid {
+        background-color: transparent;
+
     }
-    .polaroid img{
-         border-radius: 50%;
-         border: solid rgb(236, 214, 149);
+
+    .polaroid img {
+        border-radius: 50%;
+        border: solid rgb(255, 253, 245);
     }
-    
-    .nav-bar{
+
+    .polaroid:hover {
+        /* Tirando o hover da image maior */
+        box-shadow: 0px 0px 0px 0px transparent;
+    }
+
+    .nav-bar {
         display: none;
     }
-    .trilho{
+
+    .trilho {
         display: none;
     }
-    .perfil{
+
+    .perfil {
         position: absolute;
         left: 5%
     }
 
-  .apresentacao {
-    flex-direction: column;
-  }
-  .sobre-mim{
-    width: 100%;
-    margin: 10%;
-    padding: 0px 00px 20px 0px;
-  }
+    .apresentacao {
+        flex-direction: column;
+    }
 
-  .box-foto-Perfil, .sobre-mim {
-    width: 100%;
-    margin: 0;
-  }
-  .tituloTec{
-    font-size: 3rem;
-  }
-.cards{
-   width: 100%;;
+    .sobre-mim {
+        width: 100%;
+        margin: 10%;
+        padding: 0px 00px 20px 0px;
+    }
+
+    .box-foto-Perfil,
+    .sobre-mim {
+        width: 100%;
+        margin: 0;
+    }
+
+    .tituloTec {
+        font-size: 3rem;
+    }
+
+
 }
-.card {
-    display: flex;
-    height: auto;
-    perspective: none;
-    cursor: pointer;
-  }
 
-  .card-inner {
 
-    height: auto;
-  }
+@media (max-width: 1300px) {
 
-  .card-front, .card-back {
-    position: static;
-    transform: none;
-    display: flex;
-    flex-direction: row-reverse;
-    backface-visibility: visible;
-    font-size: 3rem;
-  }
+    .cards {
+        border-radius: 0px;
+        background-color: #373b3b;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 8% 0% 5% 0%;
+        padding: 4% 0% 4% 0%;
+        box-shadow: 0px 0px 0px 0px transparent;
+        height: auto;
+        gap: 0;
+    }
 
-  .card-back {
-    display: none;
-  }
+    .cards .card {
+        margin: 1px;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px transparent;
+        padding: 5% 5% 7% 5%;
+        border-radius: 10px;
+        height: auto;
+        width: 90%;
+        perspective: none;
+        border: solid rgb(149, 150, 93);
+    }
 
-  .card.active .card-back {
-    display: block;
-    margin-top: 0.5rem;
-  }
+    .card:hover .card-inner {
+        transform: none;
+    }
 
+    .card-inner {
+        flex-direction: column;
+        height: auto;
+        transition: color 0.3s ease;
+    }
+
+    .card-front {
+        position: relative;
+        transform: none;
+        display: flex;
+        flex-direction: row-reverse;
+        height: auto;
+        padding: 5rem;
+    }
+
+    .card-back {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 2rem;
+        display: none;
+        background-color: rgb(210, 209, 212);
+        position: relative;
+        transform: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        height: 15rem;
+
+    }
+
+    .toggle-arrow {
+        position: absolute;
+        right: 10px;
+        margin: 0;
+        color: rgb(172, 231, 242);
+        background: none;
+        border: none;
+        font-size: 3rem;
+        cursor: pointer;
+    }
 }
