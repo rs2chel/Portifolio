@@ -428,12 +428,14 @@ box-cards-projetos
     align-items: center;
     justify-content: center;
     height: auto;
-    background-color: #000;
+    background-color: #8091d4;
     color: #fff;
 }
 
 .tituloProjetos {
     font-size: 4rem;
+    text-decoration: underline;
+    color: #0b0773;
 }
 
 .container-cards {
@@ -452,7 +454,7 @@ box-cards-projetos
     /* Area de visualizacao */
     height: 40em;
     width: 90%;
-    background-color: #5064a4;
+    background-color: #8091d4;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -464,7 +466,6 @@ box-cards-projetos
     align-items: center;
     justify-content: start;
     overflow-y: auto;
-
 }
 
 .meusProjetos::-webkit-scrollbar {
@@ -478,19 +479,21 @@ box-cards-projetos
     padding: 10px;
     height: 35rem;
     width: 25rem;
-    background-color: rgba(39, 28, 61, 0.845);
+    background-color: rgba(0, 0, 0, 0.845);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(245, 247, 249);
+    border-radius: 30px
 }
 
 .card-projeto:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     background-color: rgba(86, 198, 235, 0.845);
-    box-shadow: 1px 4px 7px 3px #5ce4e8;
+    box-shadow: 1px 1px 1px 1px #5ce4e8;
     border: none;
+    border-radius: 30px
 }
 
 .tecnologias-usadas {
@@ -501,7 +504,7 @@ box-cards-projetos
     width: 30rem;
     height: 15rem;
     border: 3px solid #fefefe;
-    border-radius: 10px;
+    border-radius: 20px
 }
 
 .tech-badge {
@@ -519,12 +522,14 @@ box-cards-projetos
 }
 
 .tech-badge:hover {
-    background-color: #5474ff;
+    color: #9ad4dd;
+    background-color: rgb(3, 12, 113);
 }
 
 .titulo-card {
-    color: #fafafa;
-    font-size: 1.4rem;
+    text-align: center;
+    color: #544ef9;
+    font-size: 2rem;
 }
 
 .descricao-card {
@@ -628,8 +633,8 @@ box-cards-projetos
 
 .seta.esquerda:hover,
 .seta.direita:hover {
-    color: #74ff81;
-    background-color: rgb(31, 6, 57);
+    color: #9ad4dd;
+    background-color: rgb(3, 12, 113);
 }
 
 
@@ -783,5 +788,21 @@ footer {
         border: none;
         font-size: 3rem;
         cursor: pointer;
+    }
+
+    .seta.esquerda,
+    .seta.direita,
+    .bolinha {
+        display: none
+    }
+
+    .carousel-container {
+
+        margin: 5rem;
+        align-items: center;
+    }
+
+    .card-projeto {
+        margin: 5rem;
     }
 }
