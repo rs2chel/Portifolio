@@ -10,6 +10,7 @@ html {
     font-size: 16px;
     font-family: Courier New, monospace;
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -221,6 +222,7 @@ a {
 }
 
 h1 {
+    color: #d3b50c;
     font-size: 2em;
     margin: 0.5em;
     margin-top: 1em;
@@ -236,6 +238,7 @@ h2 {
 }
 
 h3 {
+    color: #d3b50c;
     margin: 0.5em;
     margin-top: 1em;
     color: #090909;
@@ -387,7 +390,7 @@ header {
     text-align: justify;
     font-family: Garamond (serif);
     color: #0b0b0b;
-    padding: 20px;
+    padding: 2%;
 
 }
 
@@ -406,20 +409,6 @@ header {
 
 /* seção de projetos  */
 
-/* 
-box-cards-projetos
-    tituloProjetos
-    container-cards
-        carousel-container
-            meusProjetos
-            card-projeto
-                tecnologias-usadas
-                    tech-badge
-                titulo-card
-                descricao-card
-                botoes-card
-                    btn-card
-*/
 
 /* &#8593; SETA PRA CIMA */
 .box-cards-projetos {
@@ -428,21 +417,21 @@ box-cards-projetos
     align-items: center;
     justify-content: center;
     height: auto;
-    background-color: #8091d4;
+    background-color: #dbdde5;
     color: #fff;
 }
 
 .tituloProjetos {
     font-size: 4rem;
     text-decoration: underline;
-    color: #0b0773;
+    color: #d3b50c;
 }
 
 .container-cards {
     /* Area do carrossel */
     position: relative;
     height: auto;
-    background-color: #8091d4;
+
     color: #fff;
     overflow: hidden;
     display: flex;
@@ -454,7 +443,7 @@ box-cards-projetos
     /* Area de visualizacao */
     height: 40em;
     width: 90%;
-    background-color: #8091d4;
+
     padding: 10px;
     display: flex;
     align-items: center;
@@ -474,12 +463,13 @@ box-cards-projetos
 }
 
 .card-projeto {
+
     border-radius: 10px;
     margin: 1rem;
     padding: 10px;
     height: 35rem;
     width: 25rem;
-    background-color: rgba(0, 0, 0, 0.845);
+    background-color: rgba(200, 200, 202, 0.766);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -528,11 +518,12 @@ box-cards-projetos
 
 .titulo-card {
     text-align: center;
-    color: #544ef9;
+    color: #d3b50c;
     font-size: 2rem;
 }
 
 .descricao-card {
+    color: #544e4e;
     margin-bottom: 3rem;
     text-align: center;
     font-size: 1.5rem
@@ -634,7 +625,7 @@ box-cards-projetos
 .seta.esquerda:hover,
 .seta.direita:hover {
     color: #9ad4dd;
-    background-color: rgb(3, 12, 113);
+    background-color: rgb(166, 172, 225);
 }
 
 
@@ -658,82 +649,8 @@ footer {
     align-items: center;
 }
 
-@media (max-width: 768px) {
-    .polaroid {
-        background-color: transparent;
-
-    }
-
-    .polaroid img {
-        border-radius: 50%;
-        border: solid rgb(255, 253, 245);
-    }
-
-    .polaroid:hover {
-        /* Tirando o hover da image maior */
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    .nav-bar {
-        display: none;
-    }
-
-    .trilho {
-        display: none;
-    }
-
-    .perfil {
-        position: absolute;
-        left: 5%
-    }
-
-    .apresentacao {
-        flex-direction: column;
-    }
-
-    .sobre-mim {
-        width: 100%;
-        margin: 10%;
-        padding: 0px 00px 20px 0px;
-    }
-
-    .box-foto-Perfil,
-    .sobre-mim {
-        width: 100%;
-        margin: 0px;
-    }
-
-    .tituloTec {
-        font-size: 3rem;
-    }
-
-    .box-cards-projetos {
-        max-width: 100%;
-        height: 100%;
-    }
-
-    .tituloProjetos {
-        font-size: 2.5rem;
-        margin: 1rem;
-    }
-
-    .container-cards {
-        max-width: 100%;
-        height: 100%;
-    }
-
-    .carousel-container {
-        min-width: 100%;
-    }
-
-    .meusProjetos {
-        min-width: 100%;
-        height: 100%;
-    }
-}
-
-
 @media (max-width: 1300px) {
+
     .img-logo {
         position: absolute;
         left: 1px;
@@ -827,4 +744,149 @@ footer {
     .card-projeto {
         margin: 5rem;
     }
+}
+
+@media (max-width: 768px) {
+    .polaroid {
+        background-color: transparent;
+
+    }
+
+    .polaroid img {
+        border-radius: 50%;
+        border: solid rgb(255, 253, 245);
+    }
+
+    .polaroid:hover {
+        /* Tirando o hover da image maior */
+        box-shadow: 0px 0px 0px 0px transparent;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .trilho {
+        display: none;
+    }
+
+    .perfil {
+        position: absolute;
+        left: 5%
+    }
+
+    .apresentacao {
+        flex-direction: column;
+    }
+
+    .sobre-mim {
+        width: 100%;
+        margin: 10%;
+        padding: 0px 00px 20px 0px;
+    }
+
+    .box-foto-Perfil,
+    .sobre-mim {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .tituloTec {
+        font-size: 3rem;
+    }
+
+    .box-cards-projetos {
+        width: 100vw;
+        max-height: 100vh;
+
+        padding: 0% 5% 5% 5%;
+    }
+
+    .tituloProjetos {
+        font-size: 2.4rem;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .container-cards {
+        width: 100vw;
+
+    }
+
+    .carousel-container {
+        padding: 0%;
+        margin: 0rem;
+        width: 100vw;
+
+    }
+
+    .meusProjetos {
+        margin-left: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-projeto {
+        margin: 1.3rem;
+        min-width: 85%;
+        max-height: 70%;
+
+    }
+
+    .seta.esquerda,
+    .seta.direita {
+
+        display: block;
+        padding: 0%;
+        border-radius: 0%;
+        width: 1.5rem;
+        height: 3rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .seta.esquerda {
+        left: 0px
+    }
+
+    .seta.direita {
+        right: 0px;
+    }
+
+    figure {
+        width: auto;
+        max-height: 9rem;
+        margin: 0px;
+    }
+
+    .img-card {
+        max-height: 9rem;
+    }
+
+    .titulo-card {
+        font-size: 1.3rem;
+    }
+
+    .descricao-card {
+        font-size: 1rem;
+    }
+
+    .tecnologias-usadas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+        margin: 0px;
+        align-items: center;
+        text-align: start;
+        justify-content: center;
+
+    }
+
+    .tech-badge {
+        padding: 10px 40px;
+        font-size: 0.8rem;
+        margin: 5px;
+        width: 4rem;
+        justify-content: center;
+    }
+
 }

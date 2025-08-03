@@ -3,8 +3,10 @@ let buttonTrilho = document.getElementById('buttonTrilho')
 let darkMode = false;
 
 buttonTrilho.addEventListener("click", function () {
+  let deslocamento = window.innerWidth <= 768 ? 16 : 24; // valor menor em telas pequenas
+
   if (!darkMode) {
-    buttonTrilho.style.transform = "translateX(24px)";
+    buttonTrilho.style.transform = `translateX(${deslocamento}px)`;
     trilho.style.background = '#000';
     buttonTrilho.style.background = '#E0FFFF';
   } else {
@@ -58,11 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function irParaPagina(pagina) {
     paginaAtual = pagina;
-    const scrollValor = cards[0].offsetWidth * cardsPorPagina * pagina;
+
+    const card = cards[0];
+    const cardEstilo = window.getComputedStyle(card);
+    const margemDireita = parseFloat(cardEstilo.marginRight);
+    const margemEsquerda = parseFloat(cardEstilo.marginLeft);
+    const larguraCard = card.offsetWidth + margemDireita + margemEsquerda;
+
+    const scrollValor = larguraCard * cardsPorPagina * pagina;
+
     carrossel.scrollTo({
       left: scrollValor,
       behavior: 'smooth'
     });
+
     atualizarBolinhas();
   }
 
