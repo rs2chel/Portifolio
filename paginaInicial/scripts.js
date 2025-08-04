@@ -24,10 +24,20 @@ function aplicarModoDark(ativo) {
 }
 const menuBtn = document.getElementById("bnt-menu");
 const nav = document.getElementById("nav-menu");
+const icon = menuBtn.querySelector("i"); // pega o <i class="fas fa-bars">
 
 // Abrir/fechar menu ao clicar no botão
 menuBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
+
+  // Troca o ícone
+  if (icon.classList.contains("fa-bars")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-times");
+  } else {
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  }
 });
 
 // Fechar menu ao clicar em qualquer link dentro dele
@@ -35,6 +45,10 @@ const navLinks = nav.querySelectorAll("a");
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("active");
+
+    // Volta o ícone pro hambúrguer
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
   });
 });
 

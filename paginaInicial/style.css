@@ -150,6 +150,10 @@ a {
     top: 1rem;
     display: none;
 }
+#bnt-menu i {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
 
 
 .logoPerfil {
@@ -780,23 +784,22 @@ footer {
     .menu {
         display: block;
     }
-
+    .bntMenu {
+        display: block;
+    }
     .bntMenu:hover {
         cursor: pointer;
         transform: scale(1.1);
     }
 
-    .bntMenu {
-        display: block;
-    }
 
     .nav-bar {
         display: none;
         position: absolute;
         top: 3%;
-        right: 5%;
+        right: 15%;
         height: auto;
-        width: 30%;
+        width: 80%;
         background: rgb(155, 154, 156);
         flex-direction: column;
         align-items: center;
@@ -808,20 +811,9 @@ footer {
 
     .nav-bar.active {
         display: flex;
+        border:1px solid rgb(84, 109, 115);
     }
 
-    .nav-header {
-        color: black;
-        text-decoration: none;
-        position: relative;
-        transition: color 0.3s ease;
-    }
-
-    .nav-header:hover,
-    .nav-header:focus,
-    .nav-header:active {
-        color: #dec430;
-    }
 
     .trilho {
         display: none;
