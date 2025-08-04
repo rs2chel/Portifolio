@@ -150,9 +150,10 @@ a {
     top: 1rem;
     display: none;
 }
+
 #bnt-menu i {
-  font-size: 24px;
-  transition: transform 0.3s ease;
+    font-size: 24px;
+    transition: transform 0.3s ease;
 }
 
 
@@ -784,9 +785,11 @@ footer {
     .menu {
         display: block;
     }
+
     .bntMenu {
         display: block;
     }
+
     .bntMenu:hover {
         cursor: pointer;
         transform: scale(1.1);
@@ -798,20 +801,25 @@ footer {
         position: absolute;
         top: 3%;
         right: 15%;
+        text-align: start;
         height: auto;
-        width: 80%;
-        background: rgb(155, 154, 156);
+        width: auto;
+        background: rgb(216, 216, 219);
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         gap: 1rem;
         padding: 1rem;
         z-index: 10;
-        border-radius: 5%;
+
+    }
+
+    .nav-header {
+        color: #0d0c0c;
     }
 
     .nav-bar.active {
         display: flex;
-        border:1px solid rgb(84, 109, 115);
+        border: 1px solid rgb(114, 125, 120);
     }
 
 

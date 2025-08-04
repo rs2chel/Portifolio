@@ -51,7 +51,19 @@ navLinks.forEach(link => {
     icon.classList.add("fa-bars");
   });
 });
+// Fechar menu ao clicar fora dele
+document.addEventListener("click", function (event) {
+  const isClickDentroDoMenu = nav.contains(event.target);
+  const isClickNoBotao = menuBtn.contains(event.target);
 
+  if (!isClickDentroDoMenu && !isClickNoBotao && nav.classList.contains("active")) {
+    nav.classList.remove("active");
+
+    // Volta o ícone pro hambúrguer
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  }
+});
 document.addEventListener('DOMContentLoaded', () => {
 
   const carrossel = document.getElementById('carrossel');
