@@ -23,6 +23,13 @@ function aplicarModoDark(ativo) {
   document.body.classList.toggle('dark', ativo);
 }
 
+const menuBtn = document.getElementById("bnt-menu");
+const nav = document.getElementById("nav-menu");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const carrossel = document.getElementById('carrossel');

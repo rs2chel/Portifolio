@@ -2,34 +2,53 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachel P. D. M</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Configurações básicas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- SEO básico -->
+    <title>Rachel P. D. Meijon | Desenvolvedora Web</title>
+    <meta name="description" content="Portfólio de Rachel Meijon com projetos em HTML, CSS, JavaScript e React." />
+    <meta name="author" content="Rachel Meijon" />
 
+    <!-- Redes sociais (Open Graph básico) -->
+    <meta property="og:title" content="Rachel Meijon | Desenvolvedora Web" />
+    <meta property="og:description" content="Confira meus projetos e entre em contato!" />
+    <meta property="og:type" content="website" />
 
+    <!-- Cor do navegador no mobile -->
+    <meta name="theme-color" content="#121212" />
+
+    <!-- Estilos e ícones -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 
 
 <body id="body">
     <header>
         <div class="perfil">
-            <!-- <img src="/Portifolio//paginaInicial/img/FotoPerfilMenor.jpg" alt="Foto Perfil" class="logoPerfil"> -->
             <img src="img/FotoPerfilMenor.jpg" alt=" Foto Perfil" class="logoPerfil">
             <a href="#" class="nomePerfil">Rachel P.</a>
         </div>
-        <nav class="nav-bar">
-            <a href="#" class="home  nav-header">home</a>
+         <div id='menu-responsivo' class="menu">
+            <div id='bnt-menu' class="bntMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="nav-bar" id="nav-menu">
+            <a href="#" class="home  nav-header">Home</a>
             <a href="#sobre" class="Sobre Mim nav-header">Sobre Mim</a>
             <a href="#tecnologias" class="Meus Projetos nav-header">Meus Projetos</a>
-            <a href="#contato" class="home nav-header">home</a>
-
+            <a href="#contato" class=" nav-header">Contato</a>
         </nav>
         <div id='trilho' class="trilho">
             <div id='buttonTrilho' class="botao-Trilho"> </div>
         </div>
+       
+        
     </header>
     <main>
         <section id="sobre" class="apresentacao">
@@ -199,12 +218,7 @@
         <section class="text-saibaMais">
             <p>
 
-                /// um pagina com aquelas linhas do tempo
-                // no lugar da logo colocar minha foto em bolinha como se fosse eu conectada
-                entao quando clicar ir para o meu perfil como se eu conectada, e entao os dados dentro de input
-                cinza(QUE
-                NAO DA PARA EDITAR)
-                TALVEZ MAIS DO SAIBA MAIS
+
             </p>
 
 
@@ -435,10 +449,10 @@
                 <a href="https://www.linkedin.com/in/racheldantas/" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://www.instagram.com/rs2chel/" target="_blank" title="GitHub">
+                <a href="https://github.com/rs2chel" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.instagram.com/seu-perfil" target="_blank" title="Instagram">
+                <a href="https://www.instagram.com/rs2chel/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
 
@@ -452,9 +466,8 @@
     </main>
 </body>
 <footer>
-    <p>Desenvolvido por Rachel </p>
+    <p>&copy; 2025 Rachel Meijon</p>
 
-    <p> 2025@copy; </p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="scripts.js"></script>
