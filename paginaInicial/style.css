@@ -785,29 +785,43 @@ footer {
         cursor: pointer;
         transform: scale(1.1);
     }
-     .bntMenu {
-    display: block;
-  }
 
-  .nav-bar {
-    display: none;
-    position: absolute;
-    top:3%;
-    right: 5%;
-    height: auto;
-    width: 30%;
-    background: rgb(155, 154, 156);
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    z-index: 10;
-   border-radius:5%;
-  }
+    .bntMenu {
+        display: block;
+    }
 
-  .nav-bar.active {
-    display: flex;
-  }
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 3%;
+        right: 5%;
+        height: auto;
+        width: 30%;
+        background: rgb(155, 154, 156);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        z-index: 10;
+        border-radius: 5%;
+    }
+
+    .nav-bar.active {
+        display: flex;
+    }
+
+    .nav-header {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav-header:hover,
+    .nav-header:focus,
+    .nav-header:active {
+        color: #dec430;
+    }
 
     .trilho {
         display: none;

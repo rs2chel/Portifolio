@@ -22,12 +22,20 @@ buttonTrilho.addEventListener("click", function () {
 function aplicarModoDark(ativo) {
   document.body.classList.toggle('dark', ativo);
 }
-
 const menuBtn = document.getElementById("bnt-menu");
 const nav = document.getElementById("nav-menu");
 
+// Abrir/fechar menu ao clicar no botão
 menuBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
+});
+
+// Fechar menu ao clicar em qualquer link dentro dele
+const navLinks = nav.querySelectorAll("a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
