@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+
+}
+
+html {
+    font-size: 16px;
+    font-family: Courier New, monospace;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: rgb(56, 62, 67)
+}
+
+.tituloPrincipal {
+    margin: 3%;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.fotoPerfil {
+    position: absolute;
+    right: 3%;
+    top: 10rem
+}
+
+aside {
+    background-color: #1a407d;
+    display: flex;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 14rem;
+
+    background-color: #b6bec9;
+    position: absolute;
+    right: 3%;
+    top: 14rem
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+#sobre {
+    justify-self: center;
+    width: 60%;
+    height: 50vh;
+    background-color: #1a407d;
+}

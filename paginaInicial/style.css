@@ -222,7 +222,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(101, 96, 96, 0.254);
+    background-color: rgba(201, 201, 201, 0.145);
 }
 
 .sobre-mim {
@@ -319,40 +319,34 @@ header {
 }
 
 .img-logo {
-
     width: 7rem;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 1rem;
-    background-color: rgba(118, 118, 118, 0.574);
     border-radius: 1em;
     margin: 1em;
     margin-top: 2em;
     align-items: center;
-
     justify-content: center;
-    box-shadow: 5px 5px 8px 10px #888888;
     height: auto;
     width: 100%;
-
 }
 
 .cards .card {
-    padding: 15px;
+    padding: 10px;
     border-radius: 30px;
-    background-color: rgb(255, 253, 253);
+    background-color: #edebebf1;
     margin: 10%;
-    height: 35rem;
-    width: 80%;
+    height: 28rem;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    box-shadow: 5px 10px 8px 10px #888888;
+    box-shadow: 3px 3px 3px 4px #888888;
     text-align: center;
     perspective: 1000px;
-
 }
 
 .card-inner {
@@ -387,12 +381,10 @@ header {
 }
 
 .card:hover {
-
     box-shadow: 1px 2px 8px 4px #85c2f49d;
 }
 
 .card-front {
-
     display: flex;
     flex-direction: column-reverse;
     background-color: rgb(255, 253, 253);
@@ -400,7 +392,7 @@ header {
 }
 
 .card-back {
-    background-color: rgba(227, 218, 218, 0.528);
+    background-color: rgba(199, 197, 197, 0.528);
     transform: rotateY(180deg);
     font-size: 2.5rem;
     align-items: center;
@@ -414,24 +406,17 @@ header {
 
 
 .card p {
-    font-size: 0.9em;
+    padding: 3%;
+    font-size: 0.76em;
 }
 
-/* seção sem info ainda  */
-
-
-
-/* seção de projetos  */
-
-
-/* &#8593; SETA PRA CIMA */
 .box-cards-projetos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: auto;
-    background-color: #dbdde5;
+    background-color: #f4f7f7;
     color: #fff;
 }
 
@@ -445,7 +430,6 @@ header {
     /* Area do carrossel */
     position: relative;
     height: auto;
-
     color: #fff;
     overflow: hidden;
     display: flex;
@@ -483,7 +467,7 @@ header {
     padding: 10px;
     height: 35rem;
     width: 25rem;
-    background-color: rgba(200, 200, 202, 0.766);
+    background-color: rgba(224, 224, 230, 0.766);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -494,7 +478,7 @@ header {
 
 .card-projeto:hover {
     transform: scale(1.05);
-    background-color: rgba(86, 198, 235, 0.845);
+    background-color: rgba(125, 135, 139, 0.845);
     box-shadow: 1px 1px 1px 1px #5ce4e8;
     border: none;
     border-radius: 30px
@@ -595,7 +579,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 10px;
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .bolinha {
@@ -608,7 +592,7 @@ header {
 }
 
 .bolinha.ativa {
-    background-color: #fff;
+    background-color: #bab4b4;
 }
 
 
