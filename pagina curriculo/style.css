@@ -1,67 +1,191 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
 
+    box-sizing: border-box;
 }
 
 html {
+
     font-size: 16px;
-    font-family: Courier New, monospace;
+    font-family: 'Courier New', monospace;
     scroll-behavior: smooth;
 }
 
-header {
+/* https://themes.getbootstrap.com/preview/?theme_id=110435 */
+body {
     display: flex;
-    position: relative;
-    justify-content: center;
-    background-color: rgb(56, 62, 67)
-}
+    flex-direction: column;
+    min-height: 100vh;
 
-.tituloPrincipal {
-    margin: 3%;
-    text-transform: uppercase;
-    font-size: 2.5rem;
     color: #fff;
 }
 
-.fotoPerfil {
-    position: absolute;
-    right: 3%;
-    top: 10rem
-}
-
-aside {
-    background-color: #1a407d;
-    display: flex;
-    position: relative;
-}
-
-nav {
+/* HEADER */
+header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 10rem;
+    padding: 3%;
+    height: 5rem;
+    background-color: rgb(0, 0, 0);
+    z-index: 4;
+}
+
+.tituloPrincipal {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #fffffd;
+}
+
+.fotoPerfil {
+    height: 14rem;
     width: 14rem;
-
-    background-color: #b6bec9;
-    position: absolute;
-    right: 3%;
-    top: 14rem
+    object-fit: cover;
+    border: 1px solid #353333;
+    margin-bottom: 15%;
 }
 
-a {
+/* ASIDE E NAV - MENU LATERAL FIXO */
+aside {
+    position: fixed;
+    top: 4rem;
+    /* abaixo do header */
+    left: 0;
+    width: 14rem;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 2rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-left: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-transform: uppercase;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
-li {
-    list-style-type: none;
+nav a:hover,
+nav a:focus {
+    color: #eda60f;
+    text-decoration: underline;
 }
 
-#sobre {
-    justify-self: center;
-    width: 60%;
-    height: 50vh;
-    background-color: #1a407d;
+/* MAIN - CONTEÚDO PRINCIPAL */
+.main-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 22%;
+    padding: 2rem 3rem;
+    background: rgba(39, 38, 38, 0.873);
+
+    width: 70%;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3 {
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.box-text {
+    background: #e5e5e5;
+    color: #000000;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(222, 228, 224);
+    line-height: 1.5;
+}
+
+/* BORDAS COLORIDAS DOS SECTIONS */
+
+#objetivo,
+#sobre,
+#formacao,
+#cursos,
+#experiencia,
+#habilidades {
+
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 6px;
+    color: #000000;
+    border: 2px solid rgb(198, 176, 51);
+    box-shadow: 5px 5px 5px 3px rgb(15, 15, 15);
+}
+
+
+
+/* LISTA DE HABILIDADES */
+#habilidades ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #eee;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem 3%;
+    }
+
+    .fotoPerfil {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    aside {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 1rem 0;
+        box-shadow: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 0;
+    }
+
+    .main-conteudo {
+        margin-left: 0;
+        padding: 1rem 2rem;
+    }
+
+    #habilidades ul {
+        margin-left: 1rem;
+    }
 }

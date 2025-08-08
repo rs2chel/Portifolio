@@ -675,7 +675,7 @@ footer {
         border-radius: 0px;
         box-shadow: 0px 0px 0px 0px transparent;
         padding: 5% 5% 7% 5%;
-
+        background-color: transparent;
         height: auto;
         width: 99%;
         perspective: none;
