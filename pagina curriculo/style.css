@@ -1,191 +1,113 @@
-/* Reset básico */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-
-    font-size: 16px;
-    font-family: 'Courier New', monospace;
-    scroll-behavior: smooth;
-}
-
-/* https://themes.getbootstrap.com/preview/?theme_id=110435 */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    color: #fff;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: center;
-    padding: 3%;
-    height: 5rem;
-    background-color: rgb(0, 0, 0);
-    z-index: 4;
+.perfil-topo {
+  text-align: center;
+  background-color: #000;
 }
 
-.tituloPrincipal {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    color: #fffffd;
+.capa {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.fotoPerfil {
-    height: 14rem;
-    width: 14rem;
-    object-fit: cover;
-    border: 1px solid #353333;
-    margin-bottom: 15%;
+.perfil-info {
+  margin-top: -2.5rem;
+  color: #fff;
 }
 
-/* ASIDE E NAV - MENU LATERAL FIXO */
+.perfil-info .fotoPerfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
 aside {
-    position: fixed;
-    top: 4rem;
-    /* abaixo do header */
-    left: 0;
-    width: 14rem;
-    height: 100%;
-    background-color: #000000;
-    padding-top: 2rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 100%;
+  background-color: #1f1f1f;
+  padding-top: 10rem;
+  color: white;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    padding-left: 1rem;
+aside ul {
+  list-style: none;
+  padding: 0 1rem;
 }
 
-nav a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+aside li {
+  margin-bottom: 1rem;
 }
 
-nav a:hover,
-nav a:focus {
-    color: #eda60f;
-    text-decoration: underline;
+aside a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* MAIN - CONTEÚDO PRINCIPAL */
+aside a:hover {
+  color: #ffb703;
+}
+
 .main-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 22%;
-    padding: 2rem 3rem;
-    background: rgba(39, 38, 38, 0.873);
-
-    width: 70%;
+  margin-left: 16rem;
+  padding: 2rem;
 }
 
 section {
-    margin-bottom: 2rem;
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-h1,
-h2,
-h3 {
-    color: #000000;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ffb703;
+  padding-bottom: 0.5rem;
 }
 
-.box-text {
-    background: #e5e5e5;
-    color: #000000;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid rgb(222, 228, 224);
-    line-height: 1.5;
+ul {
+  padding-left: 1.2rem;
 }
 
-/* BORDAS COLORIDAS DOS SECTIONS */
-
-#objetivo,
-#sobre,
-#formacao,
-#cursos,
-#experiencia,
-#habilidades {
-
-    padding: 1rem;
-    background-color: #ffffff;
-    border-radius: 6px;
-    color: #000000;
-    border: 2px solid rgb(198, 176, 51);
-    box-shadow: 5px 5px 5px 3px rgb(15, 15, 15);
-}
-
-
-
-/* LISTA DE HABILIDADES */
-#habilidades ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-    color: #eee;
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-/* FOOTER */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    font-size: 0.9rem;
-    margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+  margin-top: auto;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 1rem 3%;
-    }
-
-    .fotoPerfil {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    aside {
-        position: static;
-        width: 100%;
-        height: auto;
-        padding: 1rem 0;
-        box-shadow: none;
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-        padding-left: 0;
-    }
-
-    .main-conteudo {
-        margin-left: 0;
-        padding: 1rem 2rem;
-    }
-
-    #habilidades ul {
-        margin-left: 1rem;
-    }
+  aside {
+    display: none;
+  }
+  .main-conteudo {
+    margin: 0;
+    padding: 1rem;
+  }
 }
+</style>
