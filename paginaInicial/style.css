@@ -1,3 +1,16 @@
+/* Variáveis de cores */
+:root {
+    --primary-color: #2a9d8f;
+    /* Verde-azulado moderno */
+    --secondary-color: #e9c46a;
+    /* Amarelo pastel */
+    --text-color: #222222;
+    --background-color: #f9f9f9;
+    --button-bg: var(--primary-color);
+    --button-hover-bg: var(--secondary-color);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,31 +21,54 @@
 
 html {
     font-size: 16px;
-    font-family: Courier New, monospace;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--background-color);
 
 }
 
 body {
     overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
 }
 
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     text-transform: uppercase;
     width: 100%;
     height: 3em;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(214, 203, 136, 0.2);
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
 }
 
 a {
-    color: #090909;
+    color: var(--text-color);
     text-decoration: none;
     margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+#scroll-progress {
+    position: fixed;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #2a9d8f, #e9c46a);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
 }
 
 .perfil {
@@ -40,16 +76,18 @@ a {
     align-items: center;
     border-radius: 1rem;
     padding: 0.2rem 0 0.2rem 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
 }
 
 .nomePerfil {
-
     position: relative;
     display: inline-block;
     margin-left: 0.5rem;
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 600;
 }
 
 .nomePerfil::after {
@@ -59,13 +97,15 @@ a {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: #f5e58c;
+    background-color: var(--secondary-color);
     transition: width 0.3s ease;
 }
 
 .nomePerfil:hover {
-    color: #dec430;
+    color: var(--secondary-color);
+
 }
+
 
 .nomePerfil:hover::after {
     width: 100%;
@@ -92,9 +132,10 @@ a {
     padding: 5px;
     text-align: center;
     height: 30px;
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: 600;
 }
 
 .nav-header::after {
@@ -105,15 +146,13 @@ a {
     /* gruda no texto */
     width: 0%;
     height: 2px;
-    background-color: #f5e58c;
+    background-color: var(--secondary-color);
     /* cor do sublinhado */
     transition: width 0.5s ease;
 }
 
 .nav-header:hover {
-
-    color: #dec430;
-
+    color: var(--secondary-color);
 }
 
 .nav-header:hover::after {
@@ -179,42 +218,39 @@ a {
 }
 
 .imgPerfil:hover {
-    box-shadow: 1px 1px 10px 1px rgb(250, 250, 250);
+    box-shadow: 0 0 15px rgba(42, 157, 143, 0.6);
+    transition: box-shadow 0.3s ease;
 }
 
 .imgPerfil img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
     width: 250px;
     height: 250px;
-    overflow: hidden;
-    position: relative;
     border-radius: 5px;
     max-width: 90%;
-
+    object-fit: cover;
+    position: relative;
+    margin-top: 20px;
 }
 
 
-
 .polaroid {
-    background-color: rgb(253, 253, 253);
+    background-color: #fefefe;
     width: 18em;
     height: 20em;
     margin-right: 3%;
     display: flex;
-    align-items: top;
+    align-items: flex-start;
     justify-content: center;
-
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.1);
 }
 
 .apresentacao {
     display: flex;
     justify-content: space-between;
-
-    background-color: rgb(234, 232, 232);
-
+    background-color: #eae8e8;
+    padding: 2rem;
+    gap: 1rem;
 }
 
 .box-foto-Perfil {
@@ -222,44 +258,40 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(201, 201, 201, 0.145);
+    background-color: rgba(201, 201, 201, 0.15);
+    border-radius: 10px;
 }
 
 .sobre-mim {
-    height: 100%;
-    width: 65%;
+    width: 60%;
     margin-right: 2%;
     display: flex;
-    text-align: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 3%;
 }
 
-h1 {
-    color: #d3b50c;
-    font-size: 2em;
-    margin: 0.5em;
-    margin-top: 1em;
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
     text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 h2 {
-    color: #d3b50c;
-    margin-top: 0.2em;
-    font-size: 1.8em;
-    text-transform: uppercase;
-
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
 h3 {
-    color: #d3b50c;
-    margin: 0.5em;
-    margin-top: 1em;
-    color: #090909;
-    font-size: 1.5em;
-    text-transform: uppercase;
-
+    color: var(--text-color);
+    font-size: 1.5rem;
 }
 
 
@@ -267,53 +299,56 @@ h3 {
 .descricaoSobreMim {
     text-align: justify;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 20px 30px 10px 30px;
-
+    color: #444;
 }
 
 .container {
     display: flex;
     position: relative;
-    align-items: end;
+    align-items: flex-end;
 
 }
 
 .bnt-saibaMais {
-    text-align: center;
     border-radius: 10px;
     height: 2.5em;
-    background-color: rgb(0, 0, 0);
-    color: aliceblue;
-    padding: 10px;
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    margin-top: 0em;
-    box-shadow: 2px 2px 2px 2px #616160f9;
+    margin-top: 1em;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+    font-weight: 600;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 .bnt-saibaMais:hover {
     cursor: pointer;
-    box-shadow: 2px 1px 1px 1px #858582f9;
+    color: #3b3820;
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 6px 12px rgba(233, 196, 106, 0.5);
+    transform: translateY(-3px);
 
 }
 
-header {
-    display: flex;
-}
+
 
 .tecnologias {
     margin-top: 3rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 
 .tituloTec {
     font-size: 4rem;
     position: absolute;
-    margin: -1rem 0px 0px 0px;
+    margin-top: -2rem;
     align-items: center;
     background-color: transparent;
 }
@@ -324,8 +359,8 @@ header {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.7rem;
     border-radius: 1em;
     margin: 1em;
     margin-top: 2em;
@@ -338,22 +373,23 @@ header {
 .cards .card {
     padding: 10px;
     border-radius: 30px;
-    background-color: #edebebf1;
+    background-color: #ededed;
     margin: 10%;
-    height: 28rem;
-    width: 70%;
+    height: 30rem;
+    width: 65%;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 3px 4px #888888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     perspective: 1000px;
+    transition: box-shadow 0.9s ease;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 }
 
@@ -361,11 +397,11 @@ header {
     transform: rotateY(180deg);
     cursor: pointer;
     position: relative;
+
 }
 
 .card-front,
 .card-back {
-
     position: absolute;
     width: 100%;
     height: 100%;
@@ -381,7 +417,7 @@ header {
 }
 
 .card:hover {
-    box-shadow: 1px 2px 8px 4px #85c2f49d;
+    box-shadow: 4px 1px 20px 1px rgba(4, 240, 212, 0.3);
 }
 
 .card-front {
@@ -392,7 +428,7 @@ header {
 }
 
 .card-back {
-    background-color: rgba(199, 197, 197, 0.528);
+    background-color: rgba(135, 134, 134, 0.241);
     transform: rotateY(180deg);
     font-size: 2.5rem;
     align-items: center;
@@ -402,8 +438,6 @@ header {
     padding: 2%;
 
 }
-
-
 
 .card p {
     padding: 3%;
@@ -416,32 +450,35 @@ header {
     align-items: center;
     justify-content: center;
     height: auto;
+    color: var(--text-color);
     background-color: #f4f7f7;
     color: #fff;
+
 }
 
 .tituloProjetos {
-    font-size: 4rem;
+    font-size: 3rem;
     text-decoration: underline;
-    color: #d3b50c;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .container-cards {
     /* Area do carrossel */
     position: relative;
     height: auto;
-    color: #fff;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 0 1rem;
 }
 
 .carousel-container {
     /* Area de visualizacao */
     height: 40em;
     width: 90%;
-
     padding: 10px;
     display: flex;
     align-items: center;
@@ -451,8 +488,10 @@ header {
 .meusProjetos {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     overflow-y: auto;
+    scrollbar-width: none;
+    padding: 4rem 0;
 }
 
 .meusProjetos::-webkit-scrollbar {
@@ -461,27 +500,29 @@ header {
 }
 
 .card-projeto {
-
-    border-radius: 10px;
+    border-radius: 30px;
     margin: 1rem;
     padding: 10px;
     height: 35rem;
     width: 25rem;
-    background-color: rgba(224, 224, 230, 0.766);
+    background-color: #cce3c5dd;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(245, 247, 249);
-    border-radius: 30px
+    border: 1px solid #f5f7f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    max-height: 100%;
 }
 
 .card-projeto:hover {
     transform: scale(1.05);
-    background-color: rgba(125, 135, 139, 0.845);
-    box-shadow: 1px 1px 1px 1px #5ce4e8;
+    background-color: rgba(148, 247, 165, 0.53);
+    box-shadow: 0 4px 10px rgb(12, 73, 22);
     border: none;
-    border-radius: 30px
+
 }
 
 .tecnologias-usadas {
@@ -489,10 +530,11 @@ header {
 }
 
 .img-card {
-    width: 30rem;
+    width: 100%;
     height: 15rem;
     border: 3px solid #fefefe;
-    border-radius: 20px
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 .tech-badge {
@@ -501,38 +543,40 @@ header {
     display: flex;
     align-items: center;
     font-size: 1rem;
+    justify-content: space-between;
     background-color: #0b7793;
     width: auto;
-    padding: 16px;
-    height: 1rem;
+    padding: 8px 16px;
+    height: 1.5rem;
     border-radius: 1rem;
     margin: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tech-badge:hover {
-    color: #9ad4dd;
-    background-color: rgb(3, 12, 113);
+    color: #031e22;
+    background-color: #12c9f6;
 }
 
 .titulo-card {
     text-align: center;
-    color: #d3b50c;
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-top: 1rem;
 }
 
 .descricao-card {
     color: #544e4e;
     margin-bottom: 3rem;
     text-align: center;
-    font-size: 1.5rem
+    font-size: 1.3rem
 }
 
 .botoes-card {
     width: 100%;
+    display: flex;
     justify-content: space-between;
     position: relative;
-    display: flex;
-
 }
 
 .btn-card {
@@ -548,7 +592,8 @@ header {
     text-decoration: none;
     transition: background-color 0.3s ease;
     border-radius: 50%;
-    border: 1px double rgb(35, 193, 255);
+    border: 1px double var(--primary-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .img-seta {
@@ -566,11 +611,11 @@ header {
 }
 
 .btn-card:hover {
-    transform: scale(1.5px);
-    box-shadow: 1px 1px 1px 1px #1da8cf;
     background-color: #0b7793;
     border-color: #0e679b;
-    transform: scale(1.05);
+    box-shadow: 0 0 8px #1da8cf;
+    color: white;
+    transform: scale(1.1);
 }
 
 /* Bolinhas */
@@ -585,14 +630,17 @@ header {
 .bolinha {
     width: 12px;
     height: 12px;
-    background-color: #5d665b;
+    background-color: rgb(125, 225, 142);
+    border: 1px solid rgb(11, 54, 18);
+
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .bolinha.ativa {
-    background-color: #bab4b4;
+    background-color: rgb(12, 73, 22);
+
 }
 
 
@@ -600,25 +648,23 @@ header {
 .seta {
     position: absolute;
     top: 50%;
-    background: rgba(54, 80, 109, 0.703);
+    background: rgba(54, 80, 109, 0.7);
     color: #f8f8f9;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
     z-index: 1;
+    border-radius: 50%;
+    transform: translateY(-50%);
 }
 
 .seta.esquerda {
     left: 10px;
-    border-radius: 50%;
-    text-align: center;
 }
 
 .seta.direita {
     right: 10px;
-    border-radius: 50%;
-    text-align: center;
 }
 
 .seta.esquerda:hover,
@@ -627,17 +673,172 @@ header {
     background-color: rgb(166, 172, 225);
 }
 
-
-.redes-socias {
-    background-color: rgb(154, 158, 158);
-    width: 100%;
-    height: 5rem;
-
-    display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#contato {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(42, 157, 143, 0.2);
+    /* tom do verde-azulado */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
 }
+
+#contato h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contato label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    font-family: inherit;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+#contato input[type="text"]:focus,
+#contato input[type="email"]:focus,
+#contato textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(42, 157, 143, 0.5);
+}
+
+#contato button {
+    width: 150px;
+    align-self: center;
+    padding: 12px 0;
+    background-color: var(--button-bg);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+}
+
+#contato button:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 0 12px var(--secondary-color);
+}
+
+#btnEnviar {
+    background-color: #00c853;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+#btnEnviar:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+#btnEnviar.loading::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+#mensagemSucesso,
+#mensagemErro {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 12px;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+    display: none;
+}
+
+#mensagemSucesso {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+}
+
+#mensagemErro {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef5350;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Redes sociais */
+aside.redes-sociais {
+    margin-top: 30px;
+    text-align: center;
+}
+
+aside.redes-sociais a {
+    margin: 0 12px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+aside.redes-sociais a:hover {
+    color: var(--secondary-color);
+}
+
+
+
 
 footer {
     background-color: rgb(144, 148, 148);
@@ -658,28 +859,27 @@ footer {
     }
 
     .cards {
-        border-radius: 0px;
+        border-radius: 0;
         background-color: #fff;
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin: 8% 0% 5% 0%;
-        padding: 4% 0% 4% 0%;
-        box-shadow: 0px 0px 0px 0px transparent;
-        height: auto;
+        margin: 8% 0 5% 0;
+        padding: 4% 0;
+        box-shadow: none;
         gap: 0;
     }
 
     .cards .card {
         margin: 1px;
-        border-radius: 0px;
-        box-shadow: 0px 0px 0px 0px transparent;
+        border-radius: 0;
+        box-shadow: none;
         padding: 5% 5% 7% 5%;
         background-color: transparent;
         height: auto;
         width: 99%;
         perspective: none;
-        border: solid rgb(210, 206, 210);
+        border: 1px solid rgb(210, 206, 210);
     }
 
     .card:hover .card-inner {
@@ -699,14 +899,14 @@ footer {
         flex-direction: row-reverse;
         height: auto;
         padding: 5rem;
+
     }
 
     .card-back {
-        color: #000;
         text-transform: uppercase;
         font-size: 1.6rem;
         display: none;
-        background-color: rgb(210, 209, 212);
+        background-color: #dcdbdb;
         position: relative;
         transform: none;
         width: 100%;
@@ -745,7 +945,35 @@ footer {
     .card-projeto {
         margin: 5rem;
     }
+
+    .polaroid {
+        box-shadow: none;
+
+    }
+
+
+    #contato {
+        max-width: 700px;
+        padding: 15px;
+    }
+
+    #contato h3 {
+        font-size: 1.6rem;
+    }
+
+    #contato button {
+        width: 130px;
+        font-size: 1rem;
+    }
+
+    aside.redes-sociais a {
+        font-size: 1.8rem;
+        margin: 0 10px;
+    }
 }
+
+
+
 
 @media (max-width: 768px) {
     .polaroid {
@@ -755,12 +983,13 @@ footer {
 
     .polaroid img {
         border-radius: 50%;
+        box-shadow: none;
         border: solid rgb(255, 253, 245);
     }
 
     .polaroid:hover {
-        /* Tirando o hover da image maior */
-        box-shadow: 0px 0px 0px 0px transparent;
+
+        box-shadow: none;
     }
 
     .nav-bar {
@@ -778,6 +1007,7 @@ footer {
     .bntMenu:hover {
         cursor: pointer;
         transform: scale(1.1);
+        transition: transform 0.3s ease;
     }
 
 
@@ -790,13 +1020,15 @@ footer {
         text-align: start;
         height: auto;
         width: auto;
-        background: rgb(216, 216, 219);
+        background: rgba(203, 220, 218, 0.971);
         flex-direction: column;
         align-items: start;
         gap: 1rem;
         padding: 1rem;
         z-index: 10;
-
+        display: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(42, 157, 143, 0.3);
     }
 
     .nav-header {
@@ -815,28 +1047,33 @@ footer {
 
     .perfil {
         position: absolute;
-        left: 5%
+        left: 5%;
+
     }
 
     .apresentacao {
         flex-direction: column;
+        padding: 1rem;
     }
 
     .sobre-mim {
         width: 100%;
-        margin: 10%;
-        padding: 0px 00px 20px 0px;
+        margin: 0 0 2rem 0;
+        padding: 0 1rem 2rem 1rem;
+        text-align: center;
     }
 
     .box-foto-Perfil,
     .sobre-mim {
         width: 100%;
-        margin: 0px;
+        margin: 0;
     }
 
     .tituloTec {
         font-size: 3rem;
+
     }
+
 
     .box-cards-projetos {
         width: 100vw;
@@ -867,21 +1104,23 @@ footer {
         margin-right: 10px;
         width: 100%;
         height: 100%;
+        padding: 2rem 0;
     }
 
     .card-projeto {
         margin: 1.3rem;
-        min-width: 85%;
+        min-width: 90%;
         max-height: 70%;
+        scroll-snap-align: start;
     }
 
     .seta.esquerda,
     .seta.direita {
         display: block;
-        padding: 0%;
+        padding: 0;
         border-radius: 0%;
-        width: 1.5rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 3em;
         text-align: center;
         justify-content: center;
     }
@@ -897,11 +1136,13 @@ footer {
     figure {
         width: auto;
         max-height: 9rem;
-        margin: 0px;
+        margin: 0;
     }
 
     .img-card {
         max-height: 9rem;
+        border-radius: 15px;
+        object-fit: cover;
     }
 
     .titulo-card {
@@ -914,20 +1155,52 @@ footer {
 
     .tecnologias-usadas {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-        margin: 0px;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        margin: 0;
         align-items: center;
-        text-align: start;
+        text-align: center;
         justify-content: center;
+        gap: 0.5rem;
 
     }
 
     .tech-badge {
-        padding: 10px 40px;
-        font-size: 0.8rem;
-        margin: 5px;
-        width: 4rem;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        margin: 0 auto;
+        width: auto;
         justify-content: center;
+    }
+
+    #contato {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    #contato form {
+        gap: 12px;
+    }
+
+    #contato h3 {
+        font-size: 1.4rem;
+    }
+
+    #contato input[type="text"],
+    #contato input[type="email"],
+    #contato textarea {
+        font-size: 0.95rem;
+    }
+
+    #contato button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 0;
+        border-radius: 8px;
+    }
+
+    aside.redes-sociais a {
+        font-size: 2em;
+        margin: 0 8px;
     }
 
 }

@@ -173,3 +173,141 @@ document.addEventListener('DOMContentLoaded', () => {
   // Atualiza no redimensionamento
   window.addEventListener('resize', atualizarCards);
 });
+const scrollBar = document.getElementById('scroll-progress');
+const header = document.querySelector('header');
+
+function updateScrollBarPosition() {
+  const headerHeight = header.offsetHeight;
+  scrollBar.style.top = headerHeight + 'px';
+}
+
+function updateScrollProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollBar.style.width = scrollPercent + '%';
+}
+
+// Atualiza posição da barra ao carregar e ao redimensionar
+window.addEventListener('load', updateScrollBarPosition);
+window.addEventListener('resize', updateScrollBarPosition);
+
+// Atualiza progresso de rolagem
+window.addEventListener('scroll', updateScrollProgress);
+
+
+
+// Js do formulario
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("meuFormulario");
+  const btnEnviar = document.getElementById("btnEnviar");
+  const mensagemSucesso = document.getElementById("mensagemSucesso");
+  const mensagemErro = document.getElementById("mensagemErro");
+  let ultimoEnvio = 0;
+
+  function emailValido(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = "Enviando...";
+    btnEnviar.classList.add("loading");
+
+    mensagemSucesso.style.display = "none";
+    mensagemErro.style.display = "none";
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const assunto = document.getElementById("assunto").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+    const honeypot = form.querySelector('input[name="_honey"]').value;
+
+    if (honeypot !== "") {
+      mensagemErro.textContent = "🚫 Ação bloqueada.";
+      mensagemErro.style.display = "block";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      return;
+    }
+
+    if (!nome || !email || !assunto || !mensagem) {
+      mensagemErro.textContent = "⚠️ Preencha todos os campos.";
+      mensagemErro.style.display = "block";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      return;
+    }
+
+    if (!emailValido(email)) {
+      mensagemErro.textContent = "❌ Email inválido.";
+      mensagemErro.style.display = "block";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      return;
+    }
+
+    if (mensagem.length < 10) {
+      mensagemErro.textContent = "✏️ Escreva uma mensagem mais detalhada.";
+      mensagemErro.style.display = "block";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      return;
+    }
+
+    const agora = Date.now();
+    if (agora - ultimoEnvio < 10000) {
+      mensagemErro.textContent = "⏳ Aguarde antes de enviar novamente.";
+      mensagemErro.style.display = "block";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      return;
+    }
+    ultimoEnvio = agora;
+
+    const timeoutId = setTimeout(() => {
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      btnEnviar.classList.remove("loading");
+      mensagemErro.textContent = "⏱️ Tempo excedido. Tente novamente.";
+      mensagemErro.style.display = "block";
+    }, 8000);
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+    })
+      .then((response) => {
+        clearTimeout(timeoutId);
+        if (response.ok) {
+          mensagemSucesso.style.display = "block";
+          form.reset();
+        } else {
+          mensagemErro.textContent = "❌ Erro ao enviar. Tente novamente.";
+          mensagemErro.style.display = "block";
+        }
+      })
+      .catch(() => {
+        mensagemErro.textContent = "❌ Erro de conexão.";
+        mensagemErro.style.display = "block";
+      })
+      .finally(() => {
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "Enviar";
+        btnEnviar.classList.remove("loading");
+
+        setTimeout(() => {
+          mensagemSucesso.style.display = "none";
+          mensagemErro.style.display = "none";
+        }, 5000);
+      });
+  });
+});

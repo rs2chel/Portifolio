@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
-
-
 <body id="body">
     <header>
         <div class="perfil">
@@ -50,6 +48,7 @@
 
 
     </header>
+    <div id="scroll-progress"></div>
     <main>
         <section id="sobre" class="apresentacao">
             <div class="box-foto-Perfil">
@@ -94,9 +93,7 @@
                                 alt="React Logo">
                         </div>
                         <div class="card-back">
-
-                            <p>Aprendendo React pela facilidade em criar interfaces modernas e reutilizáveis com
-                                componentes.</p>
+                            <p>Desenvolvo interfaces modernas e reutilizáveis usando componentes.</p>
                         </div>
                     </div>
                 </div>
@@ -110,9 +107,7 @@
                                 alt="Git Logo">
                         </div>
                         <div class="card-back">
-                            <p>Implementando git na minha rotina para manter o código organizado e pronto para trabalho
-                                em
-                                equipe.</p>
+                            <p>Utilizo Git para controle de versões e colaboração eficiente em equipe.</p>
                         </div>
                     </div>
                 </div>
@@ -123,11 +118,9 @@
                             <h3>Responsividade</h3>
                             <img class='img-logo' src="https://img.icons8.com/ios/100/screen-resolution.png"
                                 alt="Responsividade" />
-
                         </div>
                         <div class="card-back">
-                            <p>O objetivo é desenvolver interfaces que funcionam bem em celulares, tablets e desktops,
-                                focando sempre em uma boa usabilidade.</p>
+                            <p>Crio interfaces adaptáveis para excelente experiência em qualquer dispositivo.</p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +134,7 @@
                                 alt="JavaScript Logo">
                         </div>
                         <div class="card-back">
-                            <p> Utilizo o JavaScript para dar vida às funcionalidades dos meus sites.</p>
+                            <p>Implemento funcionalidades dinâmicas para interatividade nas aplicações web.</p>
                         </div>
                     </div>
                 </div>
@@ -155,10 +148,7 @@
                                 alt="CSS Logo">
                         </div>
                         <div class="card-back">
-                            <p>Com o CSS, consigo estilizar páginas com facilidade, criar animações e expressar um pouco
-                                da
-                                minha personalidade através dos meus estilos.</p>
-
+                            <p>Estilizo páginas com design moderno, responsivo e com animações suaves.</p>
                         </div>
                     </div>
                 </div>
@@ -172,9 +162,7 @@
                                 alt="HTML Logo">
                         </div>
                         <div class="card-back">
-                            <p>No HTML, estruturo páginas com clareza, semântica e lógica, sempre pensando na
-                                organização do conteúdo.</p>
-
+                            <p>Estruturo conteúdo web com semântica e organização claras.</p>
                         </div>
                     </div>
                 </div>
@@ -188,9 +176,7 @@
                                 alt="Python Logo">
                         </div>
                         <div class="card-back">
-                            <p>Primeira linguagem que tive contato. Com sintaxe simples, ela me ajudou a entender lógica
-                                e
-                                dados com mais clareza.</p>
+                            <p>Base sólida em lógica e manipulação de dados com código simples e claro.</p>
                         </div>
                     </div>
                 </div>
@@ -204,17 +190,15 @@
                                 alt="Java Logo">
                         </div>
                         <div class="card-back">
-                            <p>Estudando Java para fortalecer minha lógica e construir sistemas mais robustos com
-                                orientação
-                                a objetos.</p>
+                            <p>Desenvolvo sistemas robustos com foco em orientação a objetos e boas práticas.</p>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-
         </section>
+
         <section class="text-saibaMais">
             <p>
 
@@ -445,10 +429,40 @@
             </div>
         </section>
         <section id="contato" class="redes-socias">
-            <h3> Entre em contato</h3>
-            <form>
-                <!-- Formulario entre em contato -->
+            <h3>Entre em contato</h3>
+            <form id="meuFormulario" action="https://formsubmit.co/rachelmeijom@gmail.com" method="POST">
+
+                <!-- Configurações do FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."
+                    required></textarea>
+                <input type="text" name="_honey" style="display:none">
+
+                <button type="submit" id="btnEnviar">Enviar</button>
             </form>
+
+            <!-- Mensagem de sucesso -->
+            <div id="mensagemSucesso">
+                ✅ Email enviado com sucesso!
+            </div>
+
+            <!-- Mensagem de erro -->
+            <div id="mensagemErro">
+                ❌ Erro ao enviar. Tente novamente.
+            </div>
+
             <aside class="redes-sociais">
                 <a href="https://www.linkedin.com/in/racheldantas/" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
@@ -459,13 +473,8 @@
                 <a href="https://www.instagram.com/rs2chel/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-
             </aside>
         </section>
-
-
-
-
 
     </main>
 </body>
