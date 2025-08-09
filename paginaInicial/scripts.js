@@ -26,6 +26,28 @@ const menuBtn = document.getElementById("bnt-menu");
 const nav = document.getElementById("nav-menu");
 const icon = menuBtn.querySelector("i"); // pega o <i class="fas fa-bars">
 
+// Função para redirecionar para a página de currículo
+function irParaCurriculo() {
+  window.location.href = "../pagina curriculo/index.html";
+}
+
+// Botão "Saiba mais"
+const botaoSaibaMais = document.querySelector(".bnt-saibaMais");
+if (botaoSaibaMais) {
+  botaoSaibaMais.addEventListener("click", irParaCurriculo);
+}
+
+// Foto de perfil
+const fotoPerfil = document.querySelector(".logoPerfil");
+if (fotoPerfil) {
+  fotoPerfil.addEventListener("click", irParaCurriculo);
+}
+
+// Nome do perfil
+const nomePerfil = document.querySelector(".nomePerfil");
+if (nomePerfil) {
+  nomePerfil.addEventListener("click", irParaCurriculo);
+}
 // Abrir/fechar menu ao clicar no botão
 menuBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
@@ -311,5 +333,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
-
 
