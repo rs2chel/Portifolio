@@ -28,7 +28,7 @@ const icon = menuBtn.querySelector("i"); // pega o <i class="fas fa-bars">
 
 // Função para redirecionar para a página de currículo
 function irParaCurriculo() {
-  window.location.href = "../pagina curriculo/index.html";
+  window.location.href = "/PaginaCurriculo/index.html";
 }
 
 // Botão "Saiba mais"
