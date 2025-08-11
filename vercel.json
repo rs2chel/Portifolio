@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/curriculo",
+      "dest": "/PaginaCurriculo/index.html"
+    }
+  ]
+}
