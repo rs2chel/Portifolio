@@ -25,7 +25,7 @@ O projeto tem como objetivo apresentar minhas habilidades em **HTML5, CSS3 e Jav
 
 ---
 
-🔗 Acesse aqui: [Seu GitHub Pages](https://seu-usuario.github.io/nome-do-repositorio)
+🔗 Acesse aqui: [Seu GitHub Pages](https://rs2chel.github.io/Portifolio/))
 
 ---
 
