@@ -302,11 +302,70 @@ footer {
   color: #ffb703;
   text-decoration: underline;
 }
+/* Botão Menu (mobile) */
+.btn-menu {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: none; /* Só aparece no mobile */
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 4px 10px rgba(42, 157, 143, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.btn-menu:hover {
+  background-color: #21867a;
+  transform: scale(1.05);
+}
 /* Responsividade */
 @media (max-width: 768px) {
+  .btn-voltar {
+    margin:6rem 0 1rem;
+  }
+ .btn-menu {
+    display: flex;
+  }
+
   aside {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  aside.menu-ativo {
+    display: block;
+    transform: translateX(0);
+  }
+
+  /* Fundo escurecido quando o menu aparece */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 900;
+  }
+
+  .overlay.ativo {
+    display: block;
   }
 
   .main-conteudo {
