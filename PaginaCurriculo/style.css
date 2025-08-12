@@ -335,7 +335,10 @@ footer {
  .btn-menu {
     display: flex;
   }
-
+  .btn-voltar{
+    height: 2rem;
+    padding:10px;
+  }
   aside {
     display: none;
     position: fixed;
@@ -351,7 +354,13 @@ footer {
     display: block;
     transform: translateX(0);
   }
-
+  .capa{
+    height: 3rem;
+  }
+  .perfil-info .fotoPerfil {
+    width: 60px;
+    height: 60px;
+  }
   /* Fundo escurecido quando o menu aparece */
   .overlay {
     position: fixed;
