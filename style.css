@@ -291,7 +291,7 @@ h2 {
 
 h3 {
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -354,7 +354,8 @@ h3 {
 }
 
 .img-logo {
-    width: 7rem;
+    width: 5rem;
+    padding-bottom: 20%;
 }
 
 .cards {
@@ -371,12 +372,12 @@ h3 {
 }
 
 .cards .card {
-    padding: 10px;
+    padding: 5px;
     border-radius: 30px;
-    background-color: #ededed;
+    background-color: #efebeb;
     margin: 10%;
-    height: 30rem;
-    width: 65%;
+    height: 18rem;
+    width: 55%;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -428,9 +429,9 @@ h3 {
 }
 
 .card-back {
-    background-color: rgba(135, 134, 134, 0.241);
+    background-color: rgba(17, 240, 214, 0.128);
     transform: rotateY(180deg);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     align-items: center;
     text-align: justify;
     font-family: Garamond (serif);
@@ -440,8 +441,8 @@ h3 {
 }
 
 .card p {
-    padding: 3%;
-    font-size: 0.76em;
+    padding: 8%;
+    font-size: 0.6em;
 }
 
 .box-cards-projetos {
@@ -858,7 +859,9 @@ footer {
     .img-logo {
         position: absolute;
         left: 1px;
-        width: 5rem;
+        height: 3rem;
+        width: 3rem;
+        padding-bottom: 0;
     }
 
     .cards {
@@ -900,9 +903,7 @@ footer {
         transform: none;
         display: flex;
         flex-direction: row-reverse;
-        height: auto;
-        padding: 5rem;
-
+        height: 3rem;
     }
 
     .card-back {
@@ -916,16 +917,13 @@ footer {
         align-items: center;
         text-align: justify;
         height: auto;
-        padding: 3rem;
-        min-height: 300px;
-
+        margin-top: 15px;
     }
 
     .toggle-arrow {
         position: absolute;
-        right: 5px;
+        right: 0;
         bottom: -10px;
-        margin: 0;
         color: rgb(172, 231, 242);
         background: none;
         border: none;
@@ -933,6 +931,9 @@ footer {
         cursor: pointer;
     }
 
+    .card p {
+        padding: 6%;
+    }
 
     .seta.esquerda,
     .seta.direita,
@@ -1060,7 +1061,7 @@ footer {
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
 
@@ -1069,10 +1070,11 @@ footer {
     .sobre-mim {
         width: 100%;
         margin: 0;
+        padding: 0;
     }
 
     .tituloTec {
-        font-size: 3rem;
+        font-size: 2rem;
 
     }
 
@@ -1081,11 +1083,10 @@ footer {
         width: 100vw;
         max-height: 100vh;
         padding: 0% 5% 5% 5%;
-
     }
 
     .tituloProjetos {
-        font-size: 2.4rem;
+        font-size: 2rem;
         margin: 1rem;
         text-align: center;
     }
