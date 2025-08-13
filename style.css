@@ -453,7 +453,6 @@ h3 {
     height: auto;
     color: var(--text-color);
     background-color: #f4f7f7;
-    color: #fff;
 
 }
 
@@ -484,6 +483,7 @@ h3 {
     display: flex;
     align-items: center;
     overflow: hidden;
+
 }
 
 .meusProjetos {
@@ -507,7 +507,6 @@ h3 {
     height: 35rem;
     width: 25rem;
     background-color: #cce3c5dd;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -520,7 +519,7 @@ h3 {
 
 .card-projeto:hover {
     transform: scale(1.05);
-    background-color: rgba(148, 247, 165, 0.53);
+    background-color: rgba(159, 201, 166, 0.53);
     box-shadow: 0 4px 10px rgb(12, 73, 22);
     border: none;
 
@@ -544,8 +543,8 @@ h3 {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    justify-content: space-between;
-    background-color: #0b7793;
+    justify-content: center;
+    background-color: #1d3d44;
     width: auto;
     padding: 8px 16px;
     height: 1.5rem;
@@ -851,6 +850,35 @@ footer {
     align-items: center;
 }
 
+.mensagem-temporaria {
+    position: fixed;
+    bottom: 50%;
+    right: 20%;
+    background-color: #81c784;
+    color: #ffffff;
+    border: 1px solid #01301a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    z-index: 1000;
+    animation: zoomIn 3s ease-in-out;
+
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
 @media (max-width: 1300px) {
     #scroll-progress {
         display: none;
@@ -874,6 +902,14 @@ footer {
         padding: 4% 0;
         box-shadow: none;
         gap: 0;
+    }
+
+    .meusProjetos {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
+        height: 100%;
+        padding: 2rem 0;
     }
 
     .cards .card {
@@ -1075,31 +1111,33 @@ footer {
 
     .tituloTec {
         font-size: 2rem;
-
     }
 
 
     .box-cards-projetos {
         width: 100vw;
-        max-height: 100vh;
         padding: 0% 5% 5% 5%;
     }
 
     .tituloProjetos {
         font-size: 2rem;
-        margin: 1rem;
+        margin-top: 1rem;
         text-align: center;
+
     }
 
     .container-cards {
-
         width: 100vw;
+        height: auto;
     }
 
     .carousel-container {
         padding: 0%;
-        margin: 0rem;
-        width: 100vw;
+        margin: 1rem;
+        width: 40rem;
+        height: auto;
+        margin-top: 0;
+
     }
 
     .meusProjetos {
@@ -1111,11 +1149,15 @@ footer {
     }
 
     .card-projeto {
-        margin: 1.3rem;
+        margin: 1rem;
         min-width: 90%;
-        max-height: 70%;
+        max-height: 50%;
+        height: 25em;
         scroll-snap-align: start;
+        overflow: hidden;
+
     }
+
 
     .seta.esquerda,
     .seta.direita {
@@ -1129,11 +1171,16 @@ footer {
     }
 
     .seta.esquerda {
-        left: 0px
+        left: -5px;
+        background-color: transparent;
+        color: #0b0b0b;
     }
 
     .seta.direita {
-        right: 0px;
+        right: -7px;
+        background-color: transparent;
+        color: #0b0b0b;
+        ;
     }
 
     figure {
@@ -1149,11 +1196,12 @@ footer {
     }
 
     .titulo-card {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .descricao-card {
-        font-size: 1rem;
+        font-size: 0.7rem;
+        padding: 2%;
     }
 
     .tecnologias-usadas {
@@ -1168,9 +1216,9 @@ footer {
     }
 
     .tech-badge {
-        padding: 8px 20px;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         margin: 0 auto;
+        height: 2%;
         width: auto;
         justify-content: center;
     }

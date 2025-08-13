@@ -334,3 +334,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Seleciona todos os botões com a classe 'img-seta'
+const botoesSeta = document.querySelectorAll('.btn-card.img-seta');
+
+botoesSeta.forEach(botao => {
+  botao.addEventListener('click', function (event) {
+    event.preventDefault(); // impede redirecionamento
+    mostrarMensagem();      // chama a função
+  });
+});
+
+function mostrarMensagem() {
+
+  const botoesSeta = document.querySelectorAll('.btn-card.img-seta');
+
+  botoesSeta.forEach(botao => {
+    botao.addEventListener('click', function (event) {
+      event.preventDefault();
+      mostrarMensagem();
+    });
+  });
+
+  function mostrarMensagem() {
+    const mensagem = document.createElement('div');
+    mensagem.className = 'mensagem-temporaria';
+    mensagem.textContent = 'Em desenvolvimento';
+    document.body.appendChild(mensagem);
+
+    // Remove após a duração da animação (3s)
+    setTimeout(() => mensagem.remove(), 3000);
+  }
+}
