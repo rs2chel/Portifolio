@@ -853,7 +853,7 @@ footer {
 .mensagem-temporaria {
     position: fixed;
     bottom: 50%;
-    right: 20%;
+    right: 50%;
     background-color: #81c784;
     color: #ffffff;
     border: 1px solid #01301a;
@@ -1010,6 +1010,14 @@ footer {
         font-size: 1.8rem;
         margin: 0 10px;
     }
+
+    .mensagem-temporaria {
+        position: fixed;
+        bottom: 50%;
+        right: 40%;
+
+    }
+
 }
 
 
@@ -1253,5 +1261,13 @@ footer {
         font-size: 2em;
         margin: 0 8px;
     }
+
+    .mensagem-temporaria {
+        position: fixed;
+        bottom: 50%;
+        right: 30%;
+
+    }
+
 
 }
