@@ -1120,7 +1120,7 @@ footer {
     }
 
     .tituloTec {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
 
@@ -1143,16 +1143,16 @@ footer {
 
     .carousel-container {
         padding: 0%;
-        margin: 1rem;
-        width: 40rem;
+        margin: 0rem;
+        width: 100%;
         height: auto;
         margin-top: 0;
 
     }
 
     .meusProjetos {
-        margin-left: 10px;
-        margin-right: 20px;
+        margin-left: 0.1rem;
+        margin-right: 1rem;
         width: 100%;
         height: 100%;
         padding: 2rem 0;
@@ -1162,12 +1162,25 @@ footer {
         margin: 1rem;
         min-width: 90%;
         max-height: 50%;
-        height: 27em;
+        height: auto;
         scroll-snap-align: start;
         overflow: hidden;
         max-width: 20rem;
     }
 
+
+
+    .btn-card {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+    }
+
+    .img-button {
+        position: absolute;
+        width: 1.4rem;
+    }
 
     .seta.esquerda,
     .seta.direita {
@@ -1175,22 +1188,27 @@ footer {
         padding: 0;
         border-radius: 0%;
         width: 2.5rem;
-        height: 3em;
+        height: 2em;
         text-align: center;
         justify-content: center;
     }
 
     .seta.esquerda {
-        left: -5px;
+        left: -4%;
         background-color: transparent;
         color: #0b0b0b;
     }
 
     .seta.direita {
-        right: -7px;
+        right: -4%;
         background-color: transparent;
         color: #0b0b0b;
-        ;
+
+    }
+
+    .seta.esquerda:hover,
+    .seta.direita:hover {
+        background-color: transparent;
     }
 
     figure {
@@ -1222,8 +1240,6 @@ footer {
         align-items: center;
         text-align: center;
         justify-content: center;
-        gap: 0.5rem;
-
     }
 
     .tech-badge {
