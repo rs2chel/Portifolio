@@ -372,6 +372,7 @@ h3 {
     margin-top: 1em;
     box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
     font-weight: 600;
+    text-transform: uppercase;
     transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
     animation: bounce 1.5s infinite ease-in-out;
 }
@@ -1124,6 +1125,7 @@ body.dark .btn-curriculo {
         font-size: 0.9rem;
     }
 
+
 }
 
 
@@ -1169,7 +1171,7 @@ body.dark .btn-curriculo {
     .nav-bar {
         display: none;
         position: absolute;
-
+        top: 0;
         right: 15%;
         text-align: start;
         height: auto;
@@ -1185,6 +1187,13 @@ body.dark .btn-curriculo {
         box-shadow: 0 4px 10px rgba(42, 157, 143, 0.3);
     }
 
+    .bnt-saibaMais {
+        width: 10rem;
+        height: 3rem;
+        justify-content: center;
+
+    }
+
     .nav-header {
         color: #0d0c0c;
     }
@@ -1194,6 +1203,9 @@ body.dark .btn-curriculo {
         border: 1px solid rgb(114, 125, 120);
     }
 
+    #name {
+        font-size: 1.8rem;
+    }
 
     .trilho {
         display: none;
@@ -1221,6 +1233,7 @@ body.dark .btn-curriculo {
         width: 100%;
         margin: 0;
         padding: 0;
+
     }
 
     .tituloTec {
@@ -1391,9 +1404,10 @@ body.dark .btn-curriculo {
         right: 30%;
 
     }
-
+ 
 
 }
+
 
 /* Suaviza a transição ao alternar o modo */
 body,
