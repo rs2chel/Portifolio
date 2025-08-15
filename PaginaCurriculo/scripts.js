@@ -30,3 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Lê o valor salvo no localStorage
+  const darkModeAtivo = localStorage.getItem('darkMode') === 'true';
+
+  // Só aplica a classe se estiver ativo
+  if (darkModeAtivo) {
+    document.body.classList.add('dark');
+  }
+});

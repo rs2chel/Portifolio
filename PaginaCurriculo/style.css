@@ -302,6 +302,7 @@ footer {
   color: #ffb703;
   text-decoration: underline;
 }
+
 /* Botão Menu (mobile) */
 .btn-menu {
   position: fixed;
@@ -313,7 +314,8 @@ footer {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  display: none; /* Só aparece no mobile */
+  display: none;
+  /* Só aparece no mobile */
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
@@ -327,18 +329,49 @@ footer {
   background-color: #21867a;
   transform: scale(1.05);
 }
+
+/* Botão fixo para download do currículo */
+.btn-curriculo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f4e42d;
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-curriculo:hover {
+  background-color: #d6c825;
+  transform: scale(1.05);
+}
+
+/* Versão modo escuro */
+body.dark .btn-curriculo {
+  background-color: #f4e42d;
+  color: #000;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .btn-voltar {
-    margin:6rem 0 1rem;
+    margin: 6rem 0 1rem;
   }
- .btn-menu {
+
+  .btn-menu {
     display: flex;
   }
-  .btn-voltar{
+
+  .btn-voltar {
     height: 2rem;
-    padding:10px;
+    padding: 10px;
   }
+
   aside {
     display: none;
     position: fixed;
@@ -354,13 +387,16 @@ footer {
     display: block;
     transform: translateX(0);
   }
-  .capa{
+
+  .capa {
     height: 3rem;
   }
+
   .perfil-info .fotoPerfil {
     width: 60px;
     height: 60px;
   }
+
   /* Fundo escurecido quando o menu aparece */
   .overlay {
     position: fixed;
@@ -399,4 +435,111 @@ footer {
   .habilidade-card {
     flex: 1 1 100%;
   }
+
+  .btn-curriculo {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ======= Modo Escuro ======= */
+body.dark {
+  background-color: #121212;
+}
+
+/* Links */
+body.dark a {
+  color: #f4e42d;
+}
+
+body.dark a:hover {
+  color: #000000;
+}
+
+/* Barra lateral */
+body.dark aside {
+  background-color: #262525;
+  border-right: 1px solid #333;
+}
+
+/* Artigos em Formação e Cursos */
+body.dark #formacao article,
+body.dark #cursos article {
+  background-color: #4a4a4a;
+}
+
+/* Todas as sections */
+body.dark section {
+  background-color: #2b2a2a;
+  border: 1px solid #475862;
+  color: #fff;
+}
+
+/* Diversos elementos */
+body.dark #formacao article,
+body.dark #experiencia article,
+body.dark .habilidade-card,
+body.dark #contato,
+body.dark p {
+  background-color: #4541416d;
+  border-right: 1px solid rgb(49, 47, 47);
+
+  color: #fff;
+}
+
+/* Caixa de texto */
+body.dark .box-text {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Área principal */
+body.dark .main-conteudo {
+  background-color: transparent;
+}
+
+/* Artigos no dark */
+body.dark .box-text,
+body.dark article {
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fffbfb;
+  font-size: 1.2rem;
+
+}
+
+/* Parágrafos de Formação e Cursos */
+body.dark #formacao article p,
+body.dark #cursos article p,
+body.dark #contato p,
+body.dark p {
+
+  color: #fff;
+  background-color: transparent;
+}
+
+/* Strong dentro de Formação */
+body.dark #formacao article p strong {
+  color: #f6ee7e;
+
+}
+
+/* Competências */
+body.dark #formacao article p.competencias,
+body.dark #cursos article p.competencias,
+body.dark #cursos article p,
+body.dark .box-text,
+body.dark .habilidade-card li {
+
+  color: #ffffff;
+
+}
+
+
+
+body.dark #formacao article:hover,
+body.dark #cursos article:hover,
+body.dark .habilidade-card:hover,
+body.dark #experiencia article:hover {
+  box-shadow: 2px 2px 3px 1px #21867a;
 }

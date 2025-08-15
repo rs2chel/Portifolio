@@ -1,27 +1,66 @@
-let trilho = document.getElementById('trilho')
-let buttonTrilho = document.getElementById('buttonTrilho')
-let darkMode = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const trilho = document.getElementById('trilho');
+  const buttonTrilho = document.getElementById('buttonTrilho');
 
-buttonTrilho.addEventListener("click", function () {
-  let deslocamento = window.innerWidth <= 768 ? 16 : 24; // valor menor em telas pequenas
+  // Recupera o estado salvo (true/false)
+  let darkMode = localStorage.getItem('darkMode') === 'true';
 
-  if (!darkMode) {
+  // Aplica o tema inicial baseado no que foi salvo
+  aplicarModoDark(darkMode);
+  if (darkMode) {
+    const deslocamento = window.innerWidth <= 768 ? 16 : 24;
     buttonTrilho.style.transform = `translateX(${deslocamento}px)`;
     trilho.style.background = '#000';
     buttonTrilho.style.background = '#E0FFFF';
-  } else {
-    trilho.style.justifyContent = 'flex-start';
-    buttonTrilho.style.transform = "translateX(0px)";
-    trilho.style.background = '#E0FFFF';
-    buttonTrilho.style.background = '#000';
   }
-  darkMode = !darkMode;
-  aplicarModoDark(darkMode);
+
+  buttonTrilho.addEventListener("click", () => {
+    const deslocamento = window.innerWidth <= 768 ? 16 : 24;
+
+    if (!darkMode) {
+      buttonTrilho.style.transform = `translateX(${deslocamento}px)`;
+      trilho.style.background = '#000';
+      buttonTrilho.style.background = '#E0FFFF';
+    } else {
+      trilho.style.justifyContent = 'flex-start';
+      buttonTrilho.style.transform = "translateX(0px)";
+      trilho.style.background = '#E0FFFF';
+      buttonTrilho.style.background = '#000';
+    }
+
+    // alterna
+    darkMode = !darkMode;
+
+    // aplica
+    aplicarModoDark(darkMode);
+
+    // salva no localStorage
+    localStorage.setItem('darkMode', darkMode);
+  });
+
+  function aplicarModoDark(ativo) {
+    document.body.classList.toggle('dark', ativo);
+  }
 });
 
-function aplicarModoDark(ativo) {
-  document.body.classList.toggle('dark', ativo);
+const name = document.getElementById('name');
+
+function loopMaquinaEscrever() {
+  // Digitar
+  name.style.animation = 'digitar 3s steps(22, end), piscar 0.7s step-end infinite';
+  name.style.animationFillMode = 'forwards';
+
+  // Apagar depois de 4 segundos
+  setTimeout(() => {
+    name.style.animation = 'apagar 2s steps(22, end), piscar 0.7s step-end infinite';
+    name.style.animationFillMode = 'forwards';
+  }, 4000);
 }
+
+// Inicia o loop a cada 6 segundos
+loopMaquinaEscrever();
+setInterval(loopMaquinaEscrever, 6000);
+
 const menuBtn = document.getElementById("bnt-menu");
 const nav = document.getElementById("nav-menu");
 const icon = menuBtn.querySelector("i"); // pega o <i class="fas fa-bars">
