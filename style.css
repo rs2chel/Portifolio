@@ -1236,6 +1236,10 @@ body.dark .btn-curriculo {
 
     }
 
+    .descricaoSobreMim {
+        font-size: 1.1rem;
+    }
+
     .tituloTec {
         font-size: 1rem;
     }
